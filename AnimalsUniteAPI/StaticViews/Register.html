@@ -1,0 +1,64 @@
+﻿    <!--<form ng-app="myApp" action="../Submitform.ashx" ng-controller="validateCtrl" name="myForm" novalidate method="post">-->
+
+<div class="loading-dialog" data-loading>
+</div>
+
+<form ng-submit="processForm()">
+    <div class="container body-content">
+        <div class="page-header">
+            <h1>Create a new account</h1>
+        </div>
+
+        <div class="form-horizontal">
+            <div class="jumbotron">
+
+                <div class="form-group">
+                    <label for="username" class="col-md-4 control-label">Username</label>
+                    <div class="col-md-8">
+                        <input placeholder="This is your nickname / handle" type="text" name="user" ng-model="formData.user" class="form-control" required>
+                    </div>
+                    <span style="color:red" ng-show="formData.user.$dirty && formData.user.$invalid">
+                        <span ng-show="myForm.user.$error.required">Username is required.</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="MainContent_Email" class="col-md-4 control-label">Email</label>
+                    <div class="col-md-8">
+                        <input placeholder="Enter valid email address" type="email" name="input" ng-model="formData.email" class="form-control">
+                    </div>
+                    <span style="color:red" ng-show="formData.email.$dirty && formData.email.$invalid">
+                        <span ng-show="formData.email.$error.required">Email is required.</span>
+                        <span ng-show="formData.email.$error.email">Invalid email address.</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="MainContent_Password" class="col-md-4 control-label">Password</label>
+                    <div class="col-md-8">
+                        <input type="password" placeholder="Use something that is easy to remember" class="form-control" name="passsword" ng-model="formData.password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="MainContent_ConfirmPassword" class="col-md-4 control-label">Confirm password</label>
+                    <div class="col-md-8">
+                        <input type="password" name="ConfirmPassword" ng-model="passwordconfirm" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                        <!--<input type="submit" style="width:100px;" class="btn-lgsmall btn-primary-black-verysmall btn-lglgsmall" ng-disabled="myForm.password.$dirty && myForm.password.$invalid || myForm.email.$dirty && myForm.email.$invalid">-->
+                        <button type="submit" style="width:210px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Submit request</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--<pre>
+                {{ formData }}
+            </pre>-->
+
+        </div>
+    </div>
+</form>
+

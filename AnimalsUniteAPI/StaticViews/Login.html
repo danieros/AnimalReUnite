@@ -1,0 +1,45 @@
+﻿<div class="loading-dialog" data-loading>
+</div>
+
+<!--<form name="saveTemplateData" action="../Login.ashx" method="post">-->
+<form name="loginform">
+
+    <div class="container-fluid body-content">
+
+        <div class="page-header">
+            <h1>Log in</h1>
+        </div>
+        <div class="jumbotron">
+            <div class="form-group">
+                <label for="Username">Username:</label>
+                <input type="text" class="form-control" ng-model="formData.user" name="user" required>
+                <div class="alertmessages alert-danger" ng-show="loginform.user.$error.required && loginform.user.$dirty">
+                    Please enter your username!
+                </div>
+            </div>
+            <!--<span style="color:red" ng-show="formData.user.$dirty && formData.user.$invalid">
+                <span ng-show="myForm.user.$error.required">Username is required.</span>
+            </span>-->
+
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input type="password" class="form-control" ng-model="formData.password" name="password" required>
+                <div class="alertmessages alert-danger" ng-show="loginform.password.$error.required && loginform.password.$dirty">
+                    Please enter your password!
+                </div>
+            </div>
+
+
+
+            <!--whole form: {{loginform.$error}}
+            <br>
+            name: {{loginform.user.$error}}
+            <br>
+            email: {{loginform.password.$error}}
+            <br />-->
+
+            <button type="submit" ng-click="processLogin()" ng-disabled="loginform.$invalid" style="width:210px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Submit request&nbsp;</button>
+
+        </div>
+    </div>
+</form>

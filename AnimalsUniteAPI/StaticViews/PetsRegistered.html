@@ -1,0 +1,56 @@
+﻿<div class="container-fluid body-content">
+
+    <div class="loading-dialog" data-loading>
+    </div>
+
+    <div class="page-header">
+        <h1>Pets registered by you</h1>
+    </div>
+
+    <div class="alert alert-danger" ng-show="showlogin">
+        <strong>Warning!</strong> You are either not registered or not logged in. You can test functionality but nothing will be saved.
+    </div>
+
+    <p><a href="#RegisterPet" class="btn btn-primary-black-small btn-lg">Add another pet &raquo;</a></p>
+
+    <div class="jumbotron">
+        <table width="100%">
+            <tr style="height:70px;" ng-repeat="x in names | searchFor:searchString">
+                <td>
+                    <table  width="100%">
+                        <tr>
+                            <td class="dogname">
+                                {{ x.NameOfDog }} <br />
+                                <button ng-click="deleteAnimal(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Delete</button>
+                                <button ng-click="UpdateAnimal(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Update info</button>
+                                <button ng-click="LoadPhotos(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Load photos</button>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;">
+                                color: {{ x.Color }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;">
+                                breed: {{ x.Breed }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 14px;">
+                                features: {{ x.DistinctFeatures }}
+                            </td>
+                        </tr>
+                       <tr>
+                           <td>
+                               &nbsp;
+                           </td>
+                       </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+</div>

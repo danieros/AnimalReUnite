@@ -1,0 +1,392 @@
+﻿<div class="loading-dialog" data-loading data-ng-init="init()">
+</div>
+
+
+
+<div class="container body-content">
+
+    <notifications-bar class="notifications"></notifications-bar>
+
+
+    <div class="mypage-header">
+        <!--<div class="slider">-->
+        <table width="100%">
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td style="width: 40px;">
+                    <ul id="slider1">
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/birdHead2.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/bulddogHead.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/catHead1.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/dogHead2.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/dogHead3.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/parrotHead.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                    </ul>
+                </td>
+                <td>
+                    Welcome
+                </td>
+                <td style="width: 40px;">
+                    <ul id="slider2">
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/parrotHead.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/dogHead3.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/dogHead2.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/catHead1.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/bulddogHead.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                        <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/birdHead2.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
+                    </ul>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <div class="alert alert-success" ng-show="show">
+        <strong>Success!</strong> You are sucessfully logged in as {{username}}
+    </div>
+
+    <div class="alert alert-warning" ng-show="showlogout">
+        <strong>Warning!</strong> You have logged out
+    </div>
+
+    <div id="mycarousal" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators" style="margin-bottom:35px;">
+            <li data-target="#mycarousal" data-slide-to="0" class="active">
+            </li>
+            <li data-target="#mycarousal" data-slide-to="1"></li>
+            <!--<li data-target="#mycarousal" data-slide-to="2"></li>-->
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+            <!-- First slide -->
+            <div class="item active">
+                <div class="carousel-caption">
+                    <img height="120" src="../Images/OctoberTransparent.png" />
+                    <br />
+
+                    <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
+                        Only 1 day to go before official launch. Get ready to have your world and for that matter your baby's world rocked.
+                    </h3>
+
+                    <a class="btn btn-primary-orange-home" ng-click="showintro()">Show intro &raquo;</a>
+                </div>
+            </div><!-- /.item -->
+            <!-- Second slide -->
+            <div class="item">
+                <div class="carousel-caption">
+                    <h3 style="font-size: 14px;" data-animation="animated zoomInLeft">
+                        We make extensive use of Google maps to limit all activity to your community
+                    </h3>
+                    <a>
+                        <img class="img-responsive" src="../Images/googlemap.png" style="display:inline;" />
+                    </a>
+                    <br />
+                </div>
+            </div><!-- /.item -->
+            <!-- Third slide -->
+            <!--<div class="item">
+                <div class="carousel-caption">
+                    <h3 class="icon-container" data-animation="animated bounceInDown">
+                        <span class="glyphicon glyphicon-heart"></span>
+                    </h3>
+                    <h3 data-animation="animated bounceInUp">
+                        This is the caption for slide 2
+                    </h3>
+                    <a class="btn btn-primary-red" ng-click="messages()" data-animation="animated lightSpeedIn">New messages &raquo;</a>
+                </div>
+            </div>--><!-- /.item -->
+
+
+        </div><!-- /.carousel-inner -->
+        <!-- Controls -->
+        
+
+            <div id="carouselButtons">
+                <button id="previousButton" type="button" class="btn btn-default btn">
+                    <span class="glyphicon glyphicon-backward"></span>
+                </button>
+                <button id="playButton" type="button" class="btn btn-default btn">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+                <button id="pauseButton" type="button" class="btn btn-default btn">
+                    <span class="glyphicon glyphicon-pause"></span>
+                </button>
+                <button id="nextButton" type="button" class="btn btn-default btn">
+                    <span class="glyphicon glyphicon-forward"></span>
+                </button>
+            </div>
+
+        </div><!-- /.carousel -->
+
+    <div class="homepagephotocontainer">
+        <div class="row row-centered">
+            <div class="col-sm-3">
+                <div class="btn-group">
+                    <button type="button" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="gotoPage('/PetsRegistered')" class="btn btn-primary-orange-home">{{registermessage}} &raquo;</button>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="btn-group">
+                    <button type="button" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="gotoPage('/Found')" class="btn btn-primary-orange-home">Lost my pet &raquo;</button>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="btn-group">
+                    <button type="button" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="gotoPage('/Found')" class="btn btn-primary-orange-home">Found a lost pet &raquo;</button>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="btn-group">
+                    <button type="button" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="messages()" class="btn btn-primary-orange-home">Messages &raquo;</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <div class="homepagephotocontainer">
+        <div class="row row-centered">
+            <div class="col-sm-6 col-md-2 col-xs-4">
+                <a href="#Uploadimages">
+                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/parrot.jpg" width="100" height="100" alt="Generic placeholder thumbnail">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-2 col-xs-4">
+                <a href="#">
+                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/dog3.jpg"
+                         width="100" alt="Generic placeholder thumbnail">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-2 col-xs-4">
+                <a href="#">
+                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/cat1.jpg"
+                         width="100" alt="Generic placeholder thumbnail">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-2 col-xs-4">
+                <a href="#">
+                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/dog2.jpg"
+                         width="100" alt="Generic placeholder thumbnail">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-2 col-xs-4">
+                <a href="#">
+                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/monkey.jpg"
+                         width="100" alt="Generic placeholder thumbnail">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-2 col-xs-4">
+                <a href="#">
+                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/bird2.jpg"
+                         width="100" alt="Generic placeholder thumbnail">
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <br />
+
+   
+
+
+
+
+    <!--<div class="row row-centered" ng-show="showwiz">
+        <div id="box1" class="col-sm-2 normalbox">
+            <p id="p1" class="bubble thought">or log in. Nothing to lose.</p>
+            <div id="1" class="circle">1</div>
+            <div id="b1" class="circlebox">Register<a class="btn btn-lg-steps" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle fa-1x"></i></a></div>
+        </div>
+        <div class="col-sm-2 normalbox">
+            <p id="p2" class="bubble thought">Describe your pet&hellip;</p>
+            <div id="2" class="circle">2</div>
+            <div id="b2" class="circlebox">Upload<a class="btn btn-lg-steps" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle fa-1x"></i></a></div>
+        </div>
+        <div class="col-sm-2 normalbox">
+            <p id="p3" class="bubble thought">Now we will set ball rolling&hellip;</p>
+            <div id="3" class="circle">3</div>
+            <div id="b3" class="circlebox">Lost<a class="btn btn-lg-steps" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle fa-1x"></i></a></div>
+        </div>
+        <div class="col-sm-2 normalbox">
+            <p id="p4" class="bubble thought">Watch the community at work&hellip;</p>
+            <div id="4" class="circle">4</div>
+            <div id="b4" class="circlebox">Search<a class="btn btn-lg-steps" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle fa-1x"></i></a></div>
+
+        </div>
+        <div class="col-sm-2 normalbox">
+            <p id="p5" class="bubble thought">You will be first to know&hellip;</p>
+            <div id="5" class="circle">5</div>
+            <div id="b5" class="circlebox">Notify<a class="btn btn-lg-steps" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle fa-1x"></i></a></div>
+
+        </div>
+        <div class="col-sm-2 normalbox">
+            <p id="p6" class="bubble thought">Your baby is back&hellip;</p>
+            <div id="6" class="circle">6</div>
+            <div id="b6" class="circlebox">United<a class="btn btn-lg-steps" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle fa-1x"></i></a></div>
+        </div>
+    </div>-->
+    <!-- Modal -->
+    <div id="myModal1" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Why register your pet?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        /* Demo Scripts for Bootstrap Carousel and Animate.css article
+* on SitePoint by Maria Antonietta Perna
+*/
+        (function ($) {
+            $('#previousButton').click(function () {
+                $('#mycarousal').carousel('prev');
+            });
+            $('#nextButton').click(function () {
+                $('#mycarousal').carousel('next');
+            });
+            $('#playButton').click(function () {
+                $('#mycarousal').carousel('cycle');
+            });
+            $('#pauseButton').click(function () {
+                $('#mycarousal').carousel('pause');
+            });
+
+            //$('.carousel-control.left').click(function () {
+            //    $('#myCarousel').carousel('prev');
+            //});
+
+            //$('.carousel-control.right').click(function () {
+            //    $('#myCarousel').carousel('next');
+            //});
+
+            //Function to animate slider captions
+            function doAnimations(elems) {
+                //Cache the animationend event in a variable
+                var animEndEv = 'webkitAnimationEnd animationend';
+
+                elems.each(function () {
+                    var $this = $(this),
+                        $animationType = $this.data('animation');
+                    $this.addClass($animationType).one(animEndEv, function () {
+                        $this.removeClass($animationType);
+                    });
+                });
+            }
+
+            //Variables on page load
+            var $myCarousel = $('#mycarousal'),
+                $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+
+            //Initialize carousel
+            $myCarousel.carousel();
+
+            //Animate captions in first slide on page load
+            doAnimations($firstAnimatingElems);
+
+            //Pause carousel
+            $myCarousel.carousel('pause');
+
+
+            //Other slides to be animated on carousel slide event
+            $myCarousel.on('slide.bs.carousel', function (e) {
+                var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
+                doAnimations($animatingElems);
+            });
+
+        })(jQuery);
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#slider1').cycle({
+                fx: 'fade', //'scrollLeft,scrollDown,scrollRight,scrollUp',blindX, blindY, blindZ, cover, curtainX, curtainY, fade, fadeZoom, growX, growY, none, scrollUp,scrollDown,scrollLeft,scrollRight,scrollHorz,scrollVert,shuffle,slideX,slideY,toss,turnUp,turnDown,turnLeft,turnRight,uncover,ipe ,zoom
+                speed: 'slow',
+                timeout: 2000
+            });
+
+            $('#slider2').cycle({
+                fx: 'fade', //'scrollLeft,scrollDown,scrollRight,scrollUp',blindX, blindY, blindZ, cover, curtainX, curtainY, fade, fadeZoom, growX, growY, none, scrollUp,scrollDown,scrollLeft,scrollRight,scrollHorz,scrollVert,shuffle,slideX,slideY,toss,turnUp,turnDown,turnLeft,turnRight,uncover,ipe ,zoom
+                speed: 'slow',
+                timeout: 2000
+            });
+
+            //Enable swiping...
+            $(".carousel-inner").swipe({
+                //Generic swipe handler for all directions
+                swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                    $(this).parent().carousel('next');
+                },
+                swipeRight: function () {
+                    $(this).parent().carousel('prev');
+                },
+                //Default is 75px, set to 0 for demo so any distance triggers swipe
+                threshold: 0
+            });
+        });
+    </script>
+
+
+    <!--<div class="jumbotron">
+        <div class="row row-centered">
+            <div class="col-sm-4 polaroid" ng-show="showdefaultimages">
+                <a href="#Uploadimages">
+                    <p>Register your own cat</p>
+                    <img ng-src="{{firstimage}}" class="img-responsive " />
+                </a>
+            </div>
+            <div class="col-sm-4 polaroid" ng-show="showdefaultimages">
+                <a href="#RegisterPet">
+                    <p>Register your own cat</p>
+                    <img ng-src="{{secondimage}}" class="img-responsive" />
+                </a>
+            </div>
+            <div class="col-sm-4 polaroid" ng-show="showdefaultimages">
+                <a href="#RegisterPet">
+                    <p>Register your own cat</p>
+                    <img ng-src="{{thirdimage}}" class="img-responsive" />
+                </a>
+            </div>
+
+        </div>
+
+    </div>-->
+    <!-- <div>
+         <!--<div class="row row-centered">
+             <div class="col-sm-12">
+                 <img src="../Content/Banner.png" class="img-responsive" />
+             </div>
+             <br />
+         </div>
+     </div>-->
+</div>

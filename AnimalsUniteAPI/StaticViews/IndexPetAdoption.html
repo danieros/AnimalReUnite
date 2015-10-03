@@ -1,0 +1,111 @@
+﻿<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <script src="../Scripts/jquery-2.0.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <link href="../Content/Buttons.css" rel="stylesheet" />
+
+    <!-- SPELLS -->
+    <!-- load angular and angular route via CDN -->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/angular-cookies.js"></script>
+    <script src="../Scripts/bootbox.min.js"></script>
+
+    <script src="../Scripts/app.js"></script>
+    <script src="../Scripts/controllers.js"></script>
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <link href="../Content/Bubblethought.css" rel="stylesheet" />
+    <link href="../Content/CustomNav.css" rel="stylesheet" />
+
+</head>
+<body ng-app="myApp">
+
+    <!-- HEADER AND NAVBAR -->
+    <header>
+
+        <nav class="navbar navbar-custom" ng-controller="NavController">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#"><img src="../Content/SouthAfrica.png" style="border:none;" height="25" /> Pets United&nbsp;&nbsp;</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#PetsRegistered">Pets registered</a></li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Lost">Lost</a></li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Found">Found</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Utilities<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#LostPage">Generate lost poster</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#LostPage">Share your baby</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#PetAdoption">List of NSPCA's</a></li>
+                            </ul>
+                        </li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Pricing">Pricing</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Help<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#About">About</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#PetAdoption">List of NSPCA's</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#FAQ">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-show="showlogin"><a data-toggle="collapse" data-target=".navbar-collapse" href="#Register"><i class="fa fa-user"></i> Sign up</a></li>
+                        <li ng-show="showlogin"><a data-toggle="collapse" data-target=".navbar-collapse" href="#Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li ng-show="showlogout"><a data-toggle="collapse" data-target=".navbar-collapse" href="../Logout.ashx"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    
+    </header>
+
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        {{ message }}
+        <div ng-view></div>
+        <div class="container-fluid body-content">
+            <div class="row row-centered">
+                <div class="col-sm-12">
+                    <a href="#RegisterPet">
+                        <img class="img-responsivesmall" src="../Content/facebook.png" width="60"/>
+                    </a>
+                    <a href="#RegisterPet">
+                        <img class="img-responsivesmall" src="../Content/twitter.png" width="60" />
+                    </a>
+                    <a href="#RegisterPet">
+                        <img class="img-responsivesmall" src="../Content/email.png" width="60" />
+                    </a>
+                    <a href="#RegisterPet">
+                        <img class="img-responsivesmall" src="../Content/pinterest.png" width="60" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

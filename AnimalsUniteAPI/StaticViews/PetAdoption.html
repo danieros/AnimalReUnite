@@ -1,0 +1,33 @@
+﻿<div class="container-fluid body-content">
+
+    <div class="page-header">
+        <h1>List of NSPCA's</h1>
+    </div>
+
+    <div class="bar">
+        <!-- Create a binding between the searchString model and the text field -->
+        <input type="text" ng-model="searchString" placeholder="Quick search" />
+    </div>
+
+    <!--<table>
+        <tr style="height:70px;" ng-repeat="y in names | searchForSPCA:searchString">
+            <td>
+                <a href="?id=y">&nbsp;{{ y.Name }}</a>
+            </td>
+            <td>&nbsp;{{ y.Office }}</td>
+            <td>&nbsp;{{ y.Afterhours }}</td>
+        </tr>
+    </table>-->
+
+    <ul ng-repeat="y in names | searchForSPCA:searchString">
+        <!--<tr style="height:70px;" ng-repeat="y in names | searchForSPCA:searchString">-->
+        <li>
+            <a ng-click="Detailofnspca(y.NSPCAid)">&nbsp;{{ y.Name }}</a>
+
+            <!--&nbsp;{{ y.Office }}
+            &nbsp;{{ y.Afterhours }}-->
+        </li>
+    </ul>
+
+    <br />
+</div>

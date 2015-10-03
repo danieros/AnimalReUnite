@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="petsunited" Class="PetsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=rossouw.database.windows.net;Initial Catalog=petsunited;Persist Security Info=True;User ID=danieros" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="InvesigateConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_getdogbreed" Method="sp_getdogbreed">
+    <Parameter Name="keyword" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_getdogbreedResult">
+      <Column Name="DogBreedID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dogbreedname" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DogbreedImageName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetregisteredPets" Method="sp_GetregisteredPets">
+    <Parameter Name="memberid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetregisteredPetsResult">
+      <Column Name="AnimalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MemberID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalTypeID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FeatureID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HairLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameOfDog" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DistinctFeatures" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Breed" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_login" Method="sp_login">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="sp_loginResult">
+      <Column Name="memberid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetregisteredPetDetails" Method="sp_GetregisteredPetDetails">
+    <Parameter Name="memberid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dogname" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="sp_GetregisteredPetDetailsResult">
+      <Column Name="AnimalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MemberID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalTypeID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FeatureID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HairLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameOfDog" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Breed" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_InsertFeatures" Method="sp_InsertFeatures">
+    <Parameter Name="color" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="height" Type="System.Int32" DbType="Int" />
+    <Parameter Name="weight" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hairlength" Type="System.Int32" DbType="Int" />
+    <Parameter Name="previousname" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="breed" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="animaltypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="memberid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUniqueFeatures" Method="sp_InsertUniqueFeatures">
+    <Parameter Name="animalid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="feature" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetUniqueFeatures" Method="sp_GetUniqueFeatures">
+    <Parameter Name="animalid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetUniqueFeaturesResult">
+      <Column Name="UniqueFeatureID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Feature" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getSPCA" Method="sp_getSPCA">
+    <ElementType Name="sp_getSPCAResult">
+      <Column Name="NSPCAid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Office" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Afterhours" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="emailaddress" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="physicaladdress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getSPCA_single" Method="sp_getSPCA_single">
+    <Parameter Name="spcaid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_getSPCA_singleResult">
+      <Column Name="NSPCAid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Office" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Afterhours" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="emailaddress" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="physicaladdress" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_registeruser" Method="sp_registeruser">
+    <Parameter Name="email" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="sp_registeruserResult">
+      <Column Name="mymessage" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="memberid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

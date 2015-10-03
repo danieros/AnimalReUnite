@@ -1,0 +1,159 @@
+﻿<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <script src="../Scripts/jquery-2.0.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link href="../Content/Buttons.css" rel="stylesheet" />
+    <link href="../Content/app.css" rel="stylesheet" />
+    <link href="../Content/normalize.css" rel="stylesheet" />
+    <link href="../Content/ngNotificationsBar.min.css" rel="stylesheet" />
+
+    <!-- SPELLS -->
+    <!-- load angular and angular route via CDN -->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/angular-cookies.js"></script>
+    <script src="../Scripts/ngNotificationsBar.min.js"></script>
+
+    <!--<script src="../Scripts/bootbox.min.js"></script>-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnycWatbGyK6ldFqErjFtko1yeMclNUOA&amp;sensor=true"></script>
+
+    <script src="https://rawgit.com/dwmkerr/angular-modal-service/master/dst/angular-modal-service.js"></script>
+
+
+      <script src="../Scripts/angular-sanitize.js"></script>
+    <script src="../Scripts/app.js"></script>
+    <script src="../Scripts/controllers.js"></script>
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <!--<link href="../Content/Bubblethought.css" rel="stylesheet" />-->
+    <link href="../Content/CustomNav.css" rel="stylesheet" />
+
+    <link href="../Content/jquery.guillotine.css" rel="stylesheet" />
+    <link href="../Content/jquery.guillotine.demo.css" rel="stylesheet" />
+    <script src="../Scripts/jquery.guillotine.min.js"></script>
+
+    <link href="../Content/bootstrap-dialog.min.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap-dialog.min.js"></script>
+
+    <!--<link href="../Content/mfb.css" rel="stylesheet" />
+    <script src="../Scripts/mfb-directive.js"></script>-->
+
+    <link href="../Content/mycarousel.css" rel="stylesheet" />
+    <link href="../Content/animate.css" rel="stylesheet" />
+    <script src="../Scripts/jquery.touchSwipe.min.js"></script>
+
+    <script src="../Scripts/jquery.cycle.all.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+    <!-- HEADER AND NAVBAR -->
+    <header>
+
+        <nav class="navbar navbar-custom" ng-controller="NavController">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/"><img src="../Images/Logo7.png" height="30px" style="border:none;" />&nbsp;&nbsp;</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <!--<li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/"><i class="fa fa-home"></i> Home</a></li>-->
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Pets<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#PetsRegistered">Registered</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Lost">Lost</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Found">Found</a></li>
+                            </ul>
+                        </li>
+                        <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#MyMap">Neigbourhood</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">General<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#Pricing">Pricing</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#LostPage">Generate lost poster</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#LostPage">Share your baby</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#PetAdoption">List of NSPCA's</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Help<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#About">About</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#PetAdoption">List of NSPCA's</a></li>
+                                <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#FAQ">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-show="showlogin"><a data-toggle="collapse" data-target=".navbar-collapse" href="#Register">Sign up</a></li>
+                        <li ng-show="showlogin"><a data-toggle="collapse" data-target=".navbar-collapse" href="#Login">Login</a></li>
+                        <li ng-show="showlogout"><a data-toggle="collapse" data-target=".navbar-collapse" href="../Logout.ashx">Logout</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+
+
+
+
+        <div ng-view></div>
+
+        <!--<nav mfb-menu position="br" effect="zoomin" label="hover here"
+             active-icon="ion-edit" resting-icon="ion-plus-round"
+             toggling-method="click">
+            <button mfb-button icon="paper-airplane" label="menu item"></button>
+        </nav>-->
+
+        <br />
+
+        <div class="container body-content">
+            <div class="row row-centered">
+                <div class="col-sm-12">
+                    <a href="https://www.facebook.com/PetSocietySA"  target="_blank">
+                        <img class="img-responsivesmall" src="../Images/facebook.png" width="30" />
+                    </a>
+                   
+                    <a href="https://twitter.com/petsocietysa" target="_blank">
+                        <img class="img-responsivesmall" src="../Images/twitter.png" width="30" />
+                    </a>
+                    <a href="#ContactUs">
+                        <img class="img-responsivesmall" src="../Images/email.png" width="30" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br />
+        <footer>
+            <p style="color: #000">&copy; 2015 - Pet Society</p>
+        </footer>
+    </div>
+</body>
+</html>

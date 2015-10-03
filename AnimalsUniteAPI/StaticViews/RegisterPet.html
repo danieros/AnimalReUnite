@@ -1,0 +1,128 @@
+﻿<form name="saveTemplateData" action="../RegisterOrUpdateDog.ashx" method="post">
+
+
+    <div class="body-content" >
+
+        <div class="page-header">
+            <h1>Register your pet</h1>
+        </div>
+
+        <div style="padding-bottom:10px;">
+            <button type="button" style="font-size: 20px;" ng-click="goBack('/PetsRegistered')" class="btn-lgsmall btn-primary-black-verysmall btn-lglgsmall">&nbsp; &laquo; &nbsp;</button>
+        </div>
+
+
+        <div class="alert alert-danger" ng-show="showlogin">
+            <strong>Warning!</strong> You are either not registered or not logged in. You can test functionality but nothing will be saved.
+        </div>
+
+        <label for="email">Let's identify your pet. The best way to fill in the information is imagining you describing your pet to a police artist and is making a sketch.</label>
+
+        <input type="hidden" name="memberid" ng-value="memberid"  />
+        <input type="hidden" name="previouspetname" ng-value="previouspetname" />
+        <input type="hidden" name="animalid" ng-value="animalid" />
+
+        <div class="radio">
+            <label>
+                <input type="radio" name="optradio" value="1" ng-model="typeofanimal">Dog
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-click="changeradio()" name="optradio" value="2" ng-model="typeofanimal">Cat (coming soon)
+            </label>
+        </div>
+        <div class="radio disabled">
+            <label>
+                <input type="radio" ng-click="changeradio()" name="optradio" value="3" ng-model="typeofanimal">Bird (coming soon)
+            </label>
+        </div>
+        <div class="radio disabled">
+            <label>
+                <input type="radio" ng-click="changeradio()" name="optradio" value="4" ng-model="typeofanimal">Other (coming soon)
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="petname">Name of pet:</label>
+            <input type="text" class="form-control" name="petname" ng-model="petname">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Breed:</label>
+            <input class="form-control" id="breed" ng-model="breed">
+            <div class="form-group">
+                <p><a href="#dogbreedselect" class="btn btn-primary-black-small btn-lg">or select a breed &raquo;</a></p>
+            </div>
+        </div>
+        <label for="petname">Gender</label>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optradio">Male
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optradio">Female
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="petname">Color (be as descriptive possible):</label>
+            <input type="text" class="form-control" name="color" ng-model="color">
+        </div>
+        <div class="form-group">
+            <label for="petname">Height (in cm measured to top of back):</label>
+            <input class="form-control" id="height">
+        </div>
+        <div class="form-group">
+            <label for="petname">Weight (in kg):</label>
+            <input class="form-control" id="weight">
+        </div>
+        <div class="form-group">
+            <label for="petname">Length of hair (in cm):</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optradio">Very long
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optradio">Long
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optradio">Medium
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optradio">Short
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optradio">Very short
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="comment">Any distinct features? Add every feature as separate entry for easier retrievel in future? </label>
+
+        </div>
+
+        <ul id="todo-list">
+            <li ng-repeat="task in tasklist track by $index">
+                <button type="button" ng-click="deleteTask(tasklist.indexOf(task))" class="btn-lgsmall btn-primary-black-verysmall btn-lglgsmall">-</button>
+                <span class="completed-{{task.completed}}">{{task.name}}</span>
+                <input type="hidden" name="feature{{tasklist.indexOf(task)}}" value="{{task.name}}" />
+            </li>
+        </ul>
+        <input type="text" name="add-task" style="display: inline-block;" class="form-control" placeholder="Add unique feature here" ng-model="taskName" />
+        <button type="button" ng-click="addTask()" class="btn-lgsmall btn-primary-black-verysmall btn-lglgsmall">+</button>
+        <!--<div class="form-group">
+            <p><a href="#RegisterPet" class="btn btn-primary-green-small btn-lg">Upload photo/s of your pet &raquo;</a></p>
+        </div>-->
+
+        <br /><br />
+        <button ng-click="showcursor()" type="submit" style="width:100px;" class="btn-lgsmall btn-primary-black-verysmall btn-lglgsmall">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+﻿
+   
+    <div class="body-content">        
+        <div>
+
+            <div class="loading-dialog" data-loading>
+            </div>
+
+            <div ng-bind-html="loggedin" class="alert"></div>
+
+            <label for="email">You may have a cross breed so you can select more than one breed</label>
+
+            <span style="color:black;" class="selected-item">
+                Selected Items:
+            </span>
+
+            <div ng-repeat="name in selection" class="selected-item">
+                {{name}}
+            </div>
+
+            <p><a href="#RegisterPet" class="btn btn-primary-green btn-lg">Use breed selected &raquo;</a></p>
+
+            <div class="bar">
+                <!-- Create a binding between the searchString model and the text field -->
+                <input type="text" ng-model="searchString" placeholder="Quick search" />
+            </div>
+            <table>
+                <tr style="height:70px;" ng-repeat="x in names | searchFor:searchString">
+                    <td>
+                        <div style="border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px; width: 60px; height: 60px; background: white; border: solid black 1px; padding-left:10px; padding-top: 10px;"><img src="http://www.ecare4me.com/otherimg/{{ x.DogbreedImageName }}" height="40" /></div>
+                    </td>
+                    <td>&nbsp;<hr></td>
+                    <td> <input type="checkbox" name="dogbreed" value="{{ x.DogBreedID }}" ng-checked="selection.indexOf(x.Dogbreedname) > -1" ng-click="toggleSelection(x.Dogbreedname)"></td>
+                    <td>&nbsp;{{ x.Dogbreedname }}</td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
