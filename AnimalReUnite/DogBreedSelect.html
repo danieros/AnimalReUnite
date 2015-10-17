@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/controllers.js"></script>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <form name="saveTemplateData" action="http://localhost:18643/" >
+        <label for="email">You may have a cross breed so you can select more than one breed</label>
+        <div ng-app="myApp" ng-controller="InstantSearchController">
+            <div class="bar">
+                <!-- Create a binding between the searchString model and the text field -->
+                <input type="text" ng-model="searchString" placeholder="Enter your search terms" />
+            </div>
+            <table>
+                <tr ng-repeat="x in names | searchFor:searchString">
+                    <td> <input type="checkbox" name="dogbreed" value="{{ x.DogBreedID }}" ng-model="master"></td>
+                    <td>&nbsp;{{ x.Dogbreedname }}</td>
+                    <td>
+                        <img src="http://www.ecare4me.com/otherimg/{{ x.DogbreedImageName }}" height="40" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</body>
+</html>

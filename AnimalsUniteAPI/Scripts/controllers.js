@@ -188,6 +188,20 @@ function resetall() {
 
 app.controller('mainController', function ($scope, notifications, $route, $location) {
 
+    var one_day = 1000 * 60 * 60 * 24;
+
+    // Convert both dates to milliseconds
+    var date1_ms = new Date(2015, 9, 1);
+    console.log(date1_ms);
+    var date2_ms = new Date();
+    console.log(date2_ms);
+
+    // Calculate the difference in milliseconds
+    var difference_ms = date2_ms - date1_ms;
+
+    // Convert back to days and return
+    $scope.days = Math.round(difference_ms / one_day);
+
     var message1 = "<i>\"To my pet"
     message1 += "<br />I will never move and not take you with me"
     message1 += "<br />I will never put you in a shelter and leave"
@@ -557,7 +571,7 @@ app.controller('SPCAController', function ($scope, $http, $sce, userService, $lo
         console.log("id = " + y);
         userService.setspcaid(y);
         $location.path('\PetAdoptionDetail');
-    //}
+    }
 });
 
 app.controller('InstantSearchController', function ($scope, $http, $sce) {
