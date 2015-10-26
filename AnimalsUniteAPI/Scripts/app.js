@@ -43,6 +43,12 @@ app.config(function ($routeProvider) {
             controller: 'registerpetController'
         })
 
+        // route for the Team
+        .when('/Team', {
+            templateUrl: 'TheTeam.html',
+            controller: 'theteamController'
+        })
+
         // route for the found pet
         .when('/Found', {
             templateUrl: 'FoundPet.html',
@@ -69,7 +75,7 @@ app.config(function ($routeProvider) {
         // route for FAQ
         .when('/FAQ', {
             templateUrl: 'FAQ.html',
-            controller: 'findpetController'
+            controller: 'faqController'
         })
 
         // route for the about page

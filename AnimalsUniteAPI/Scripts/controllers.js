@@ -1,4 +1,10 @@
 ﻿
+app.controller('faqController', function ($scope, $location, ModalService, userService) {
+
+
+});
+
+
 app.controller('editimageController', function ($scope, $location, ModalService, userService) {
 
     //Go back
@@ -437,6 +443,7 @@ message1];
 
 
     var username = getCookie("yourname");
+    $scope.username = username;
     console.log("defaultcomntroller username = " + username);
 
     if (getCookie("yourname") == 'undefined' || getCookie("yourname") == null || getCookie("yourname") == "") {

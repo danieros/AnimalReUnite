@@ -533,6 +533,7 @@
     <Content Include="Images\dogHead2.jpg" />
     <Content Include="Images\dogHead3.jpg" />
     <Content Include="Images\download.png" />
+    <Content Include="Images\DR.JPG" />
     <Content Include="Images\dribbble.png" />
     <Content Include="Images\email.png" />
     <Content Include="Images\evernote.png" />
@@ -558,10 +559,12 @@
     <Content Include="Images\petpaw.png" />
     <Content Include="Images\pinterest.png" />
     <Content Include="Images\rss.png" />
+    <Content Include="Images\rsz_1rsz_1rsz_spcalogo.png" />
     <Content Include="Images\share.png" />
     <Content Include="Images\skype.png" />
     <Content Include="Images\SouthAfrica.png" />
     <Content Include="Images\spca.jpg" />
+    <Content Include="Images\SPCALogo.png" />
     <Content Include="Images\stumbleupon.png" />
     <Content Include="Images\tumblr.png" />
     <Content Include="Images\twitter.png" />
@@ -646,6 +649,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="StaticPages\Recognise.html" />
+    <Content Include="StaticViews\TheTeam.html" />
     <Content Include="StaticViews\About.html" />
     <Content Include="StaticViews\ContactUs.html" />
     <Content Include="StaticViews\Default.html" />
@@ -670,6 +674,7 @@
     <Content Include="StaticViews\Register.html" />
     <Content Include="StaticViews\Testpage.html" />
     <Content Include="StaticViews\Uploadimages.html" />
+    <Content Include="StaticViews\WallOfHeroes.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
