@@ -66,6 +66,25 @@ app.controller('LoginController', function ($scope, $http, $location, $route) {
             console.log(data);
 
             if (data == "1") {
+                var types = [BootstrapDialog.TYPE_SUCCESS];
+
+                $.each(types, function (index, type) {
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Login succeeded',
+                        cssClass: 'login-dialog',
+                        message: "Congratulations, you have sucessfully logged in",
+                        buttons: [{
+                            label: 'Ok',
+                            cssClass: 'btn btn-primary-orange-home',
+                            action: function (dialogItself) {
+                                dialogItself.close();
+                            }
+
+                        }]
+                    });
+                });
+
                 $location.path('/');
 
             }
@@ -76,6 +95,7 @@ app.controller('LoginController', function ($scope, $http, $location, $route) {
                     BootstrapDialog.show({
                         type: type,
                         title: 'Login failed',
+                        cssClass: 'login-dialog',
                         message: data,
                         buttons: [{
                             label: 'Ok',
@@ -225,12 +245,18 @@ app.controller('mainController', function ($scope, notifications, $route, $locat
     message3 += "We then limit search to this area to focus efforts. Experience has shown this is where you will find your pet if they get lost.";
     message3 += "<div style=\"text-align: center;\"><img src=\"../Images/googlemapDialog.png\" height=\"120\"/></div>";
 
+    var message4 = "So the question what will this cost you?";
+    message4 += "The quick answer is nothing.";
+    message4 += "However we would really appreciate a donation of R50 of which R10 is donated to your charity of choice";
+    message4 += "We really feel we can make a difference but we have costs of course to maintain the code and to host it";
+    message4 += "To make a donation see our pricing page";
+
     $scope.showintro = function () {
         var howManyDialogs = 5;
-        var titles = ["5 titele <br /><span class=\"dialognumber\">5 of 5</span>", "Found a stray!! <br /><span class=\"dialognumber\">4 of 5</span>", "Community? <br /><span class=\"dialognumber\">3 of 5</span>", "Assist you when your pet gets lost <br /><span class=\"dialognumber\">2 of 5</span>", "Why become part of Pet Society <br /><span class=\"dialognumber\">1 of 5</span>"];
+        var titles = ["5 titele <br /><span class=\"dialognumber\">5 of 5</span>", "Pricing!! <br /><span class=\"dialognumber\">4 of 5</span>", "Community? <br /><span class=\"dialognumber\">3 of 5</span>", "Assist you when your pet gets lost <br /><span class=\"dialognumber\">2 of 5</span>", "Why become part of Pet Society <br /><span class=\"dialognumber\">1 of 5</span>"];
         var messages = [
         "5",
-        "4",
+        message4,
         message3,
         message2,
 message1];
