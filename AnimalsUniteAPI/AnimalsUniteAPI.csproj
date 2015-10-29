@@ -251,6 +251,7 @@
     <Compile Include="AzureCommon.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DogBreedController.cs" />
+    <Compile Include="Controllers\HeroesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PetDetailsController.cs" />
     <Compile Include="Controllers\PetsRegisteredController.cs" />
@@ -541,6 +542,8 @@
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\flickr.png" />
     <Content Include="Images\forrst.png" />
+    <Content Include="Images\GoldStarNew.png" />
+    <Content Include="Images\goldstarSmall.png" />
     <Content Include="Images\google-plus.png" />
     <Content Include="Images\googlemap.png" />
     <Content Include="Images\googlemapDialog.png" />
@@ -559,6 +562,7 @@
     <Content Include="Images\petpaw.png" />
     <Content Include="Images\pinterest.png" />
     <Content Include="Images\rss.png" />
+    <Content Include="Images\rsz_1rsz_1rsz_goldstarnew.png" />
     <Content Include="Images\rsz_1rsz_1rsz_spcalogo.png" />
     <Content Include="Images\share.png" />
     <Content Include="Images\skype.png" />
@@ -615,6 +619,10 @@
     <Content Include="Backload\Client\blueimp\blob\package.json" />
     <Content Include="Login.ashx" />
     <Content Include="Logout.ashx" />
+    <Content Include="fonts\Bombing.ttf" />
+    <Content Include="fonts\marker.ttf" />
+    <Content Include="fonts\NOSED___.TTF" />
+    <Content Include="fonts\whoa.ttf" />
     <None Include="Properties\PublishProfiles\PetsUnited.pubxml" />
     <Content Include="Scripts\controllers.js" />
     <Content Include="Scripts\angular.min.js.map" />

@@ -16,6 +16,12 @@ app.config(function ($routeProvider) {
             controller: 'mainController'
         })
 
+ // route for the wall of heroes page
+        .when('/WallOfHeroes', {
+            templateUrl: 'WallOfHeroes.html',
+            controller: 'wallofheroesController'
+        })
+
                 // route for the about page
         .when('/PetAdoptionDetail', {
             templateUrl: 'PetAdoptionDetail.html',

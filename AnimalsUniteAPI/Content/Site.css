@@ -706,3 +706,49 @@ h3
 {
     font-size: 18px;
 }
+
+.navbar-nav > li > a
+{
+    font-size: 11px !important;
+}
+
+.responsivebrand
+{
+    padding: 5px 0 0 5px;
+    display: block;
+    height: auto;
+    max-width: 70%;
+}
+
+.navbar-toggle{
+    margin-top: 15px !important;
+}
+
+.dropdown-menu{
+    font-size: 10px !important;
+}
+
+
+/*@font-face {
+    font-family:Bombing_font;
+    src: local(Bombing_font), url('../fonts/Bombing.ttf') format('opentype');
+}
+
+.grafitti
+{
+     font-family:Bombing_font;
+        font-size:32px;
+        color: yellow;
+}*/
+
+@font-face {
+    font-family:marker__font;
+    src: local(marker__font), url('../fonts/marker.ttf') format('opentype');
+}
+
+.grafitti
+{
+     font-family:marker__font;
+        font-size:20px;
+        color: blue;
+}

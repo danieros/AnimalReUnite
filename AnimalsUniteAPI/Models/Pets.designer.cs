@@ -131,6 +131,13 @@ namespace AnimalsUniteAPI.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, username, password);
 			return ((ISingleResult<sp_registeruserResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetHeroes")]
+		public ISingleResult<sp_GetHeroesResult> sp_GetHeroes()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetHeroesResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_getdogbreedResult
@@ -1074,6 +1081,176 @@ namespace AnimalsUniteAPI.Models
 				if ((this._memberid != value))
 				{
 					this._memberid = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetHeroesResult
+	{
+		
+		private int _MemberID;
+		
+		private string _Username;
+		
+		private string _Cellphone;
+		
+		private System.DateTime _DateInserted;
+		
+		private System.Nullable<bool> _Paid;
+		
+		private System.Nullable<int> _Stars;
+		
+		private string _Reason;
+		
+		private System.Nullable<System.DateTime> _LastFeautured;
+		
+		private string _ReasonforFeature;
+		
+		public sp_GetHeroesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberID", DbType="Int NOT NULL")]
+		public int MemberID
+		{
+			get
+			{
+				return this._MemberID;
+			}
+			set
+			{
+				if ((this._MemberID != value))
+				{
+					this._MemberID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(200)")]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cellphone", DbType="VarChar(50)")]
+		public string Cellphone
+		{
+			get
+			{
+				return this._Cellphone;
+			}
+			set
+			{
+				if ((this._Cellphone != value))
+				{
+					this._Cellphone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateInserted", DbType="DateTime NOT NULL")]
+		public System.DateTime DateInserted
+		{
+			get
+			{
+				return this._DateInserted;
+			}
+			set
+			{
+				if ((this._DateInserted != value))
+				{
+					this._DateInserted = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paid", DbType="Bit")]
+		public System.Nullable<bool> Paid
+		{
+			get
+			{
+				return this._Paid;
+			}
+			set
+			{
+				if ((this._Paid != value))
+				{
+					this._Paid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Stars", DbType="Int")]
+		public System.Nullable<int> Stars
+		{
+			get
+			{
+				return this._Stars;
+			}
+			set
+			{
+				if ((this._Stars != value))
+				{
+					this._Stars = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reason", DbType="VarChar(MAX)")]
+		public string Reason
+		{
+			get
+			{
+				return this._Reason;
+			}
+			set
+			{
+				if ((this._Reason != value))
+				{
+					this._Reason = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastFeautured", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastFeautured
+		{
+			get
+			{
+				return this._LastFeautured;
+			}
+			set
+			{
+				if ((this._LastFeautured != value))
+				{
+					this._LastFeautured = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReasonforFeature", DbType="VarChar(MAX)")]
+		public string ReasonforFeature
+		{
+			get
+			{
+				return this._ReasonforFeature;
+			}
+			set
+			{
+				if ((this._ReasonforFeature != value))
+				{
+					this._ReasonforFeature = value;
 				}
 			}
 		}

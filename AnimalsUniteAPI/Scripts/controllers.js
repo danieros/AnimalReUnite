@@ -5,6 +5,19 @@ app.controller('faqController', function ($scope, $location, ModalService, userS
 });
 
 
+app.controller('wallofheroesController', function ($scope, $location, ModalService, userService, $http) {
+    $http.get("/api/Heroes/GetHeroes")
+   .success(function (response) {
+       $scope.names = response;
+       //$scope.nameofspca = response[0].Name;
+       //$scope.office = response[0].Office;
+       //$scope.afterhours = response[0].Afterhours;
+       //$scope.emailaddress = response[0].emailaddress;
+       //$scope.physicaladdress = response[0].physicaladdress;
+   });
+
+});
+
 app.controller('editimageController', function ($scope, $location, ModalService, userService) {
 
     //Go back

@@ -1,33 +1,92 @@
 ﻿<div class="container-fluid body-content">
 
-    <div class="page-header">
-        <h1>List of NSPCA's</h1>
+    <div class="mypage-headersmall">
+        Wall of heroes
     </div>
 
     <div class="bar">
         <!-- Create a binding between the searchString model and the text field -->
-        <input type="text" ng-model="searchString" placeholder="Quick search" />
+        <input type="text" class="form-control" ng-model="searchString" placeholder="Quick search" />
+    </div>
+    <br />
+    <div class="jumbotron" style="line-height:1;">
+        <table>
+            <tr style="padding-bottom: 10px;">
+                <td>
+                    <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                </td>
+                <td></td>
+                <td></td>
+                <td style="padding: 5px 0 0 15px;">
+                    Member gave donation
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                </td>
+                <td>
+                    <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                </td>
+                <td></td>
+                <td style="padding: 5px 0 0 15px;">
+                    Member gave donation and rescued pet (click on name)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                </td>
+                <td>
+                    <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                </td>
+                <td>
+                    <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                </td>
+                <td style="padding: 5px 0 0 15px;">
+                    Member gave donation and did something extraordinary (click on name)
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <!--<table>
-        <tr style="height:70px;" ng-repeat="y in names | searchForSPCA:searchString">
-            <td>
-                <a href="?id=y">&nbsp;{{ y.Name }}</a>
-            </td>
-            <td>&nbsp;{{ y.Office }}</td>
-            <td>&nbsp;{{ y.Afterhours }}</td>
-        </tr>
-    </table>-->
+  
+    <div class="bigborder" ng-repeat="x in names" ng-cloak>
+        <table>
+            <tr>
+                <td style="width: 100px; padding: 5px 0 5px 0;">
+                    <div ng-switch on="{{x.Stars}}">
+                        <div ng-switch-when="1">
+                            <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                        </div>
+                        <div ng-switch-when="2">
+                            <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" /><img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                        </div>
+                        <div ng-switch-when="3">
+                            <img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" /><img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" /><img src="../Images/rsz_1rsz_1rsz_goldstarnew.png" height="30" />
+                        </div>
+                    </div>
+ 
+                </td>
+                <td class="grafitti">
+                    &nbsp;{{x.Username}}
+                </td>
+            </tr>
+        </table>
+    </div>
 
-    <ul ng-repeat="y in names | searchForSPCA:searchString">
-        <!--<tr style="height:70px;" ng-repeat="y in names | searchForSPCA:searchString">-->
+
+    <!--<ul ng-repeat="y in names | searchForSPCA:searchString">
         <li>
             <a ng-click="Detailofnspca(y.NSPCAid)">&nbsp;{{ y.Name }}</a>
-
-            <!--&nbsp;{{ y.Office }}
-            &nbsp;{{ y.Afterhours }}-->
         </li>
-    </ul>
+    </ul>-->
 
     <br />
 </div>
