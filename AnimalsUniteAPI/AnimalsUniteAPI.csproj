@@ -681,6 +681,9 @@
     <Content Include="StaticViews\RegisterPet.html" />
     <Content Include="StaticViews\Register.html" />
     <Content Include="StaticViews\Testpage.html" />
+    <Content Include="StaticViews\UnderConstruction2.html" />
+    <Content Include="StaticViews\UnderConstruction3.html" />
+    <Content Include="StaticViews\UnderConstruction1.html" />
     <Content Include="StaticViews\Uploadimages.html" />
     <Content Include="StaticViews\WallOfHeroes.html" />
     <Content Include="Web.config">

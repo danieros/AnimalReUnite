@@ -16,6 +16,13 @@ app.controller('wallofheroesController', function ($scope, $location, ModalServi
        //$scope.physicaladdress = response[0].physicaladdress;
    });
 
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+    ];
+
+    var d = new Date();
+    $scope.month = monthNames[d.getMonth()];
+
 });
 
 app.controller('editimageController', function ($scope, $location, ModalService, userService) {
@@ -157,17 +164,54 @@ app.controller('formController', function ($scope, $http, $location) {
         .success(function (data) {
             console.log(data);
 
-            setCookie("message", 0, -1);
-            $location.path('');
+            //setCookie("message", 0, -1);
+            //$location.path('');
 
-            //if (!data.success) {
-            //    // if not successful, bind errors to error variables
-            //    $scope.errorName = data.errors.name;
-            //    $scope.errorSuperhero = data.errors.superheroAlias;
-            //} else {
-            //    // if successful, bind success message to message
-            //    $scope.message = data.message;
-            //}
+            if (data == "You successfully registered") {
+                var types = [BootstrapDialog.TYPE_SUCCESS];
+
+                $.each(types, function (index, type) {
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Registration succeeded',
+                        cssClass: 'login-dialog',
+                        message: "Congratulations, you have sucessfully registered",
+                        buttons: [{
+                            label: 'Ok',
+                            cssClass: 'btn btn-primary-orange-home',
+                            action: function (dialogItself) {
+                                dialogItself.close();
+                            }
+
+                        }]
+                    });
+                });
+
+                $location.path('/');
+
+            }
+            else {
+                var types = [BootstrapDialog.TYPE_DANGER];
+
+                $.each(types, function (index, type) {
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Registration failed',
+                        cssClass: 'login-dialog',
+                        message: data,
+                        buttons: [{
+                            label: 'Ok',
+                            cssClass: 'btn btn-dialog-alert',
+                            action: function (dialogItself) {
+                                dialogItself.close();
+                            }
+
+                        }]
+                    });
+                });
+            }
+
+
         });
     };
 

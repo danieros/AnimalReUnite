@@ -16,6 +16,7 @@ namespace AnimalsUniteAPI
             string username = "";
             string password = "";
             string email = "";
+            string mymessage = "";
 
             if (context.Request.HttpMethod == "POST")
             {
@@ -59,19 +60,16 @@ namespace AnimalsUniteAPI
                     cookie2.Expires = DateTime.Now.AddDays(30);
                     //cookie.Path = "/StaticViews";
                     context.Response.AppendCookie(cookie2);
+                    mymessage = linqregister.mymessage;
                 }
                 else
-                {                    
-                    HttpCookie cookie = new HttpCookie("message");
-                    cookie.Value = linqregister.mymessage;
-                    cookie.Expires = DateTime.Now.AddDays(1);
-                     cookie.Path = "/StaticViews";
-                    context.Response.AppendCookie(cookie);
+                {
+                    mymessage = linqregister.mymessage;
                 }
             }
 
             context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+            context.Response.Write(mymessage);
 
         }
 

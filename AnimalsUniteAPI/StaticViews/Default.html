@@ -50,7 +50,6 @@
     <!--<div class="alert alert-success" ng-show="show">
         <strong>Success!</strong> You are sucessfully logged in as {{username}}
     </div>-->
-
     <!--<div class="alert alert-warning" ng-show="showlogout">
         <strong>Warning!</strong> You have logged out
     </div>-->
@@ -59,10 +58,9 @@
 
         <!-- Indicators -->
         <ol class="carousel-indicators" style="margin-bottom:35px;">
-            <li data-target="#mycarousal" data-slide-to="0" class="active">
-            </li>
+            <li data-target="#mycarousal" data-slide-to="0" class="active"></li>
             <li data-target="#mycarousal" data-slide-to="1"></li>
-            <!--<li data-target="#mycarousal" data-slide-to="2"></li>-->
+            <li data-target="#mycarousal" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -71,17 +69,36 @@
             <!-- First slide -->
             <div class="item active">
                 <div class="carousel-caption">
-                    <img height="120" src="../Images/OctoberTransparent.png" />
+                    <a href="#Register">
+                        <h3 class="icon-container" data-animation="animated bounceInDown">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </h3>
+                    </a>
                     <br />
 
                     <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
-                        It has been {{days}} days since we launched and already we making a difference.  Please share with your friends!
+                        <a href="#Register">
+                            Register TODAY and by end of week you will be amazed how much we cn assist you and how much fun this web site can be. We busy making changes based on October Beta but has decided to get the ball rolling and keep you updated on the changes during this week.
+                        </a>
                     </h3>
 
                     <a class="btn btn-primary-orange-home" ng-click="showintro()">Show intro &raquo;</a>
                 </div>
             </div><!-- /.item -->
             <!-- Second slide -->
+            <div class="item">
+                <div class="carousel-caption">
+                    <img height="120" src="../Images/OctoberTransparent.png" />
+                    <br />
+
+                    <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
+                        It has been {{days}} days since we launched and already we making a difference.  Please share with your friends! Some functions will be disabled this week while we incorporate feedback but that should prevent you from registering.
+                    </h3>
+
+                    <a class="btn btn-primary-orange-home" ng-click="showintro()">Show intro &raquo;</a>
+                </div>
+            </div><!-- /.item -->
+            <!-- Third slide -->
             <div class="item">
                 <div class="carousel-caption">
                     <h3 style="font-size: 14px;" data-animation="animated zoomInLeft">
@@ -107,50 +124,55 @@
                     </h3>
                     <a class="btn btn-primary-red" ng-click="messages()" data-animation="animated lightSpeedIn">New messages &raquo;</a>
                 </div>
-            </div>--><!-- /.item -->
+            </div>-->
+            <!-- /.item -->
 
 
         </div><!-- /.carousel-inner -->
         <!-- Controls -->
-        
 
-            <div id="carouselButtons">
-                <button id="previousButton" type="button" class="btn btn-default btn">
-                    <span class="glyphicon glyphicon-backward"></span>
-                </button>
-                <button id="playButton" type="button" class="btn btn-default btn">
-                    <span class="glyphicon glyphicon-play"></span>
-                </button>
-                <button id="pauseButton" type="button" class="btn btn-default btn">
-                    <span class="glyphicon glyphicon-pause"></span>
-                </button>
-                <button id="nextButton" type="button" class="btn btn-default btn">
-                    <span class="glyphicon glyphicon-forward"></span>
-                </button>
-            </div>
 
-        </div><!-- /.carousel -->
+        <div id="carouselButtons">
+            <button id="previousButton" type="button" class="btn btn-default btn">
+                <span class="glyphicon glyphicon-backward"></span>
+            </button>
+            <button id="playButton" type="button" class="btn btn-default btn">
+                <span class="glyphicon glyphicon-play"></span>
+            </button>
+            <button id="pauseButton" type="button" class="btn btn-default btn">
+                <span class="glyphicon glyphicon-pause"></span>
+            </button>
+            <button id="nextButton" type="button" class="btn btn-default btn">
+                <span class="glyphicon glyphicon-forward"></span>
+            </button>
+        </div>
+
+    </div><!-- /.carousel -->
 
     <div class="homepagephotocontainer">
         <div class="row row-centered">
             <div class="col-sm-3">
                 <div class="btn-group">
                     <button type="button" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="gotoPage('/PetsRegistered')" class="btn btn-primary-orange-home">{{registermessage}} &raquo;</button>
+                    <button type="button" ng-click="gotoPage('/Temp1')" class="btn btn-primary-orange-home">
+                        Upload my pet
+
+                        &raquo;
+                    </button>
                 </div>
             </div>
 
             <div class="col-sm-3">
                 <div class="btn-group">
                     <button type="button" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="gotoPage('/Found')" class="btn btn-primary-orange-home">Lost my pet &raquo;</button>
+                    <button type="button" ng-click="gotoPage('/Temp2')" class="btn btn-primary-orange-home">Lost my pet &raquo;</button>
                 </div>
             </div>
 
             <div class="col-sm-3">
                 <div class="btn-group">
                     <button type="button" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="gotoPage('/Found')" class="btn btn-primary-orange-home">Found a lost pet &raquo;</button>
+                    <button type="button" ng-click="gotoPage('/Temp3')" class="btn btn-primary-orange-home">Found a lost pet &raquo;</button>
                 </div>
             </div>
 
@@ -206,7 +228,7 @@
     </div>
     <br />
 
-   
+
 
 
 
