@@ -153,29 +153,103 @@ app.controller('formController', function ($scope, $http, $location) {
     // $scope will allow this to pass between controller and view
     $scope.formData = {};
 
+
+    //$scope.processForm = function () {
+    //    alert("myForm.$invalid = " + $scope.myForm.$invalid);
+    //}
+
     //// process the form
     $scope.processForm = function () {
-        $http({
-            method: 'POST',
-            url: '../Submitform.ashx',
-            data: $.param($scope.formData),  // pass in data as strings
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-        })
-        .success(function (data) {
-            console.log(data);
+        if ($scope.myForm.$invalid == false) {
+            $http({
+                method: 'POST',
+                url: '../Submitform.ashx',
+                data: $.param($scope.formData),  // pass in data as strings
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+            .success(function (data) {
+                console.log(data);
 
-            //setCookie("message", 0, -1);
-            //$location.path('');
+                if (data == "You successfully registered") {
+                    var types = [BootstrapDialog.TYPE_SUCCESS];
 
-            if (data == "You successfully registered") {
+                    $.each(types, function (index, type) {
+                        BootstrapDialog.show({
+                            type: type,
+                            title: 'Registration succeeded',
+                            cssClass: 'login-dialog',
+                            message: "Congratulations, you have sucessfully registered",
+                            buttons: [{
+                                label: 'Ok',
+                                cssClass: 'btn btn-primary-orange-home',
+                                action: function (dialogItself) {
+                                    dialogItself.close();
+                                }
+
+                            }]
+                        });
+                    });
+
+                    $location.path('/');
+
+                }
+                else {
+                    var types = [BootstrapDialog.TYPE_DANGER];
+
+                    $.each(types, function (index, type) {
+                        BootstrapDialog.show({
+                            type: type,
+                            title: 'Registration failed',
+                            cssClass: 'login-dialog',
+                            message: data,
+                            buttons: [{
+                                label: 'Ok',
+                                cssClass: 'btn btn-dialog-alert',
+                                action: function (dialogItself) {
+                                    dialogItself.close();
+                                }
+
+                            }]
+                        });
+                    });
+                }
+
+
+            });
+        }
+    };
+
+});
+
+app.controller('contactUsController', function ($scope, $http, $location) {
+
+    $scope.formData = {};
+
+
+    //$scope.processForm = function () {
+    //    alert("myForm.$invalid = " + $scope.myForm.$invalid);
+    //}
+
+    //// process the form
+    $scope.processForm = function () {
+        if ($scope.myForm.$invalid == false) {
+            $http({
+                method: 'POST',
+                url: '../ContactUs.ashx',
+                data: $.param($scope.formData),  // pass in data as strings
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+            .success(function (data) {
+                console.log(data);
+
                 var types = [BootstrapDialog.TYPE_SUCCESS];
 
                 $.each(types, function (index, type) {
                     BootstrapDialog.show({
                         type: type,
-                        title: 'Registration succeeded',
+                        title: 'Your request has been sent',
                         cssClass: 'login-dialog',
-                        message: "Congratulations, you have sucessfully registered",
+                        message: "We will be in contact with you within 24 hours",
                         buttons: [{
                             label: 'Ok',
                             cssClass: 'btn btn-primary-orange-home',
@@ -189,34 +263,11 @@ app.controller('formController', function ($scope, $http, $location) {
 
                 $location.path('/');
 
-            }
-            else {
-                var types = [BootstrapDialog.TYPE_DANGER];
-
-                $.each(types, function (index, type) {
-                    BootstrapDialog.show({
-                        type: type,
-                        title: 'Registration failed',
-                        cssClass: 'login-dialog',
-                        message: data,
-                        buttons: [{
-                            label: 'Ok',
-                            cssClass: 'btn btn-dialog-alert',
-                            action: function (dialogItself) {
-                                dialogItself.close();
-                            }
-
-                        }]
-                    });
-                });
-            }
-
-
-        });
+            });
+        }
     };
 
 });
-
 
 
 app.controller('NavController', function ($scope, $location) {
@@ -270,6 +321,16 @@ function resetall() {
 }
 
 app.controller('mainController', function ($scope, notifications, $route, $location) {
+
+
+
+    $scope.side = 'front';
+    $scope.toggle = function () {
+        $scope.side = $scope.side == 'back' ? 'front' : 'back';
+    }
+
+
+
 
     var one_day = 1000 * 60 * 60 * 24;
 
@@ -381,12 +442,13 @@ message1];
 
 
     $scope.messages = function () {
-        notifications.showWarning("help");
+        notifications.closeAll();
+        notifications.showSuccess("Lorem ipsum dolor sit amet, te ipsum petentium instructior quo. Eu probo homero eam. Nec mollis epicuri placerat no, sed latine volutpat conceptam in. Populo legendos elaboraret eum te, inani nihil vidisse at cum. Mutat falli mea in, volutpat vituperatoribus mea eu. No cum error nemore tractatos.");
     };
 
 
     $scope.showError = function () {
-        notifications.showWarning("help");
+        notifications.showSuccess("help");
         notifications.showError({
             message: 'Oops! Something bad just happened! (hides faster)',
             hideDelay: 1500, //ms

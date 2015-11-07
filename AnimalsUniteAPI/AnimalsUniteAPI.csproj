@@ -249,6 +249,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="AzureCommon.cs" />
+    <Compile Include="ContactUs.ashx.cs">
+      <DependentUpon>ContactUs.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DogBreedController.cs" />
     <Compile Include="Controllers\HeroesController.cs" />
@@ -576,10 +579,10 @@
     <Content Include="Images\waiting.gif" />
     <Content Include="Images\youtube.png" />
     <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-messages.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-sanitize.js" />
-    <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\azure.jquery.fine-uploader.min.js" />
@@ -623,6 +626,7 @@
     <Content Include="fonts\marker.ttf" />
     <Content Include="fonts\NOSED___.TTF" />
     <Content Include="fonts\whoa.ttf" />
+    <Content Include="ContactUs.ashx" />
     <None Include="Properties\PublishProfiles\PetsUnited.pubxml" />
     <Content Include="Scripts\controllers.js" />
     <Content Include="Scripts\angular.min.js.map" />

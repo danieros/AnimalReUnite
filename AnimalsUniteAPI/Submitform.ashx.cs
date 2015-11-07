@@ -30,7 +30,7 @@ namespace AnimalsUniteAPI
                         case "email":
                             email = context.Request.Form[key];
                             break;
-                        case "passsword":
+                        case "mypasssword":
                             password = context.Request.Form[key];
                             break;
                         default:

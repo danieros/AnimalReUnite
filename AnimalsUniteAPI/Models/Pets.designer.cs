@@ -138,6 +138,13 @@ namespace AnimalsUniteAPI.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_GetHeroesResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertMessages")]
+		public int sp_InsertMessages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string nameofuser, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string message)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nameofuser, email, message);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_getdogbreedResult

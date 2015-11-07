@@ -78,7 +78,7 @@
 
                     <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
                         <a href="#Register">
-                            Register TODAY and by end of week you will be amazed how much we cn assist you and how much fun this web site can be. We busy making changes based on October Beta but has decided to get the ball rolling and keep you updated on the changes during this week.
+                            Register TODAY and by end of week you will be amazed how much we can assist you and how much fun this web site can be.
                         </a>
                     </h3>
 
@@ -92,7 +92,7 @@
                     <br />
 
                     <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
-                        It has been {{days}} days since we launched and already we making a difference.  Please share with your friends! Some functions will be disabled this week while we incorporate feedback but that should prevent you from registering.
+                        It has been {{days}} days since we launched to beta group.  Some functions will be disabled this week while we incorporate feedback but dont let you stop from registering. We are quick!!
                     </h3>
 
                     <a class="btn btn-primary-orange-home" ng-click="showintro()">Show intro &raquo;</a>
@@ -103,7 +103,7 @@
                 <div class="carousel-caption">
                     <h3 style="font-size: 14px;" data-animation="animated zoomInLeft">
                         <a href="#MyMap">
-                            We make extensive use of Google maps to limit all activity to your community
+                            We make extensive use of Google maps to limit activity to your community.
                         </a>
 
                     </h3>
@@ -189,39 +189,72 @@
     <div class="homepagephotocontainer">
         <div class="row row-centered">
             <div class="col-sm-6 col-md-2 col-xs-4">
-                <a href="#Uploadimages">
-                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/parrot.jpg" width="100" height="100" alt="Generic placeholder thumbnail">
-                </a>
+
+                <flip class="image-example {{side === 'front' ? 'flip-front' : 'flip-back'}}" ng-click="toggle()">
+                    <flip-front>
+                        <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/parrot.jpg" width="100" alt="Generic placeholder thumbnail">
+                    </flip-front>
+                    <flip-back>
+                        <div style="font-size: 11px;">
+                            This will be your pet's photo
+                        </div>
+                    </flip-back>
+                </flip>
+
             </div>
             <div class="col-sm-6 col-md-2 col-xs-4">
-                <a href="#">
-                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/dog3.jpg"
-                         width="100" alt="Generic placeholder thumbnail">
-                </a>
+
+                <flip class="image-example {{side === 'front' ? 'flip-front' : 'flip-back'}}" ng-click="toggle()">
+                    <flip-front>
+                        <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/dog3.jpg" width="100" alt="Generic placeholder thumbnail">
+                    </flip-front>
+                    <flip-back>
+                        <div style="font-size: 11px;">
+                            This will be your pet's photo
+                        </div>
+                    </flip-back>
+                </flip>
+
+
             </div>
             <div class="col-sm-6 col-md-2 col-xs-4">
-                <a href="#">
-                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/cat1.jpg"
-                         width="100" alt="Generic placeholder thumbnail">
-                </a>
+
+                        <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/cat1.jpg"
+                             width="100" alt="Generic placeholder thumbnail">
+                    
+
             </div>
             <div class="col-sm-6 col-md-2 col-xs-4">
-                <a href="#">
-                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/dog2.jpg"
-                         width="100" alt="Generic placeholder thumbnail">
-                </a>
+                <flip class="image-example {{side === 'front' ? 'flip-front' : 'flip-back'}}" ng-click="toggle()">
+                    <flip-front>
+                        <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/dog2.jpg"
+                             width="100" alt="Generic placeholder thumbnail">
+                    </flip-front>
+                    <flip-back>
+                        <div style="font-size: 11px;">
+                            This will be your pet's photo
+                        </div>
+                    </flip-back>
+                </flip>
             </div>
             <div class="col-sm-6 col-md-2 col-xs-4">
-                <a href="#">
-                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/monkey.jpg"
-                         width="100" alt="Generic placeholder thumbnail">
-                </a>
+                <flip class="image-example {{side === 'front' ? 'flip-front' : 'flip-back'}}" ng-click="toggle()">
+                    <flip-front>
+                        <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/monkey.jpg"
+                             width="100" alt="Generic placeholder thumbnail">
+                    </flip-front>
+                    <flip-back>
+                        <div style="font-size: 11px;">
+                            This will be your pet's photo
+                        </div>
+                    </flip-back>
+                </flip>
             </div>
             <div class="col-sm-6 col-md-2 col-xs-4">
-                <a href="#">
-                    <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/bird2.jpg"
-                         width="100" alt="Generic placeholder thumbnail">
-                </a>
+
+                <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/bird2.jpg"
+                     width="100" alt="Generic placeholder thumbnail">
+
             </div>
         </div>
 
@@ -288,11 +321,20 @@
     </div>
 
 
+
     <script>
         /* Demo Scripts for Bootstrap Carousel and Animate.css article
 * on SitePoint by Maria Antonietta Perna
 */
         (function ($) {
+
+
+
+
+
+
+
+
             $('#previousButton').click(function () {
                 $('#mycarousal').carousel('prev');
             });
@@ -380,6 +422,8 @@
             });
         });
     </script>
+
+
 
 
     <!--<div class="jumbotron">

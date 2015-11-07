@@ -3,65 +3,93 @@
 <div class="loading-dialog" data-loading>
 </div>
 
-<form ng-submit="processForm()">
-    <div class="container body-content">
+<//form ng-submit="processForm()" name="myForm"  novalidate>
+    <form ng-submit="processForm()" name="myForm" role="form" novalidate>
+        <div class="container body-content">
 
-        <div class="mypage-headersmall">
-            Create a new account
-        </div>
+            <div class="mypage-headersmall">
+                Create a new account
+            </div>
 
-        <br />
+            <br />
 
-        <div class="form-horizontal">
-            <div class="jumbotron">
+            <div class="form-horizontal">
+                <div class="jumbotron">
 
-                <div class="form-group">
-                    <label for="username" class="col-md-4 control-label">Username</label>
-                    <div class="col-md-8">
-                        <input placeholder="This is your nickname / handle" type="text" name="user" ng-model="formData.user" class="form-control" required>
-                    </div>
-                    <span style="color:red" ng-show="formData.user.$dirty && formData.user.$invalid">
-                        <span ng-show="myForm.user.$error.required">Username is required.</span>
-                    </span>
-                </div>
-                <div class="form-group">
-                    <label for="MainContent_Email" class="col-md-4 control-label">Email</label>
-                    <div class="col-md-8">
-                        <input placeholder="Enter valid email address" type="email" name="input" ng-model="formData.email" class="form-control">
-                    </div>
-                    <span style="color:red" ng-show="formData.email.$dirty && formData.email.$invalid">
-                        <span ng-show="formData.email.$error.required">Email is required.</span>
-                        <span ng-show="formData.email.$error.email">Invalid email address.</span>
-                    </span>
-                </div>
-                <div class="form-group">
-                    <label for="MainContent_Password" class="col-md-4 control-label">Password</label>
-                    <div class="col-md-8">
-                        <input type="password" placeholder="Use something that is easy to remember" class="form-control" name="passsword" ng-model="formData.password" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-
-                    <input ng-model='formData.password_verify' type="password" name='confirm_password' placeholder='confirm password' required data-password-verify="formData.password" class="form-control" >
-
-  
                     <div class="form-group">
-                        <div class="col-md-offset-4 col-md-8">
+                        <label for="username" class="col-md-4 control-label">Username</label>
+                        <div class="col-md-8">
+                            <input placeholder="This is your nickname / handle" type="text" name="user" ng-model="formData.user" class="form-control" ng-minlength="5" ng-maxlength="20" required>
+                        </div>
+
+                        <!--<pre>myForm.user.$error = {{ myForm.user.$error | json }}</pre>-->
+
+                        <div ng-if="myForm.user.$touched" ng-messages="myForm.user.$error" style="color:yellow; margin-left: 15px;" role="alert">
+                            <div ng-message="required">You did not enter your username</div>
+                            <div ng-message="minlength">Your username is too short</div>
+                            <div ng-message="maxlength">Your username is too long</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="MainContent_Email" class="col-md-4 control-label">Email</label>
+                        <div class="col-md-8">
+                            <input placeholder="Enter valid email address" type="email" name="email" ng-model="formData.email" class="form-control" required>
+                        </div>
+
+                        <!--<pre>myForm.email.$error = {{ myForm.email.$error | json }}</pre>-->
+
+                        <div ng-if="myForm.user.$touched" ng-messages="myForm.email.$error" style="color:yellow; margin-left: 15px;" role="alert">
+                            <div ng-message="required">You did not enter email address</div>
+                            <div ng-message="email">Your email address is invalid</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="MainContent_Password" class="col-md-4 control-label">Password</label>
+                        <div class="col-md-8">
+                            <input type="password" placeholder="Use something that is easy to remember" class="form-control" name="mypasssword" ng-model="formData.mypasssword" required ng-minlength="5">
+                        </div>
+
+                        <!--<pre>myForm.mypasssword.$error = {{ myForm.mypasssword.$error | json }}</pre>-->
+
+                        <div ng-if="myForm.user.$touched" ng-messages="myForm.mypasssword.$error" style="color:yellow; margin-left: 15px;" role="alert">
+                            <div ng-message="required">You did not enter a password</div>
+                            <div ng-message="minlength">Your password is too short</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="MainContent_Password" class="col-md-4 control-label">Confirm Password</label>
+                        <div class="col-md-8">
+                            <input type="password" name="confirmPassword" ng-model="formData.confirmPassword" required compare-to="formData.mypasssword" class="form-control" />
+                        </div>
+                        <!--<pre>myForm.user.$error = {{ myForm.confirmPassword.$error | json }}</pre>-->
+
+                        <div ng-if="myForm.user.$touched" ng-messages="myForm.confirmPassword.$error" style="color:yellow; margin-left: 15px;" role="alert">
+                            <div ng-message="required">Required</div>
+                            <div ng-message="compareTo">Not the same</div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">&nbsp;</label>
+                        <div class="col-md-8">
                             <button type="submit" style="width:210px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Submit request</button>
                         </div>
                     </div>
+
+                    <!--<pre>myForm.$error = {{ myForm.$error | json }}</pre>
+
+
+                    <pre>
+                    {{ formData }}
+                </pre>-->
+
                 </div>
-
-
-
-            <!--<pre>
-                {{ formData }}
-            </pre>-->
+            </div>
 
         </div>
-    </div>
-
-        </div>
-</form>
+    </form>
 

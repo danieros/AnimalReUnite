@@ -10,37 +10,49 @@
             Log in
         </div>
         <br />
-        <div class="jumbotron">
-            <div class="form-group">
-                <label for="Username">Username:</label>
-                <input type="text" class="form-control" ng-model="formData.user" name="user" required>
-                <div class="alertmessages alert-danger" ng-show="loginform.user.$error.required && loginform.user.$dirty">
-                    Please enter your username!
+
+        <div class="form-horizontal">
+            <div class="jumbotron">
+                <div class="form-group">
+                    <label for="Username" class="col-md-4 control-label">Username:</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="formData.user" name="user" required>
+                    </div>
+                    <div class="alertmessages alert-danger" ng-show="loginform.user.$error.required && loginform.user.$dirty">
+                        Please enter your username!
+                    </div>
                 </div>
-            </div>
-            <!--<span style="color:red" ng-show="formData.user.$dirty && formData.user.$invalid">
-                <span ng-show="myForm.user.$error.required">Username is required.</span>
-            </span>-->
+                <!--<span style="color:red" ng-show="formData.user.$dirty && formData.user.$invalid">
+                    <span ng-show="myForm.user.$error.required">Username is required.</span>
+                </span>-->
 
-            <div class="form-group">
-                <label for="Password">Password:</label>
-                <input type="password" class="form-control" ng-model="formData.password" name="password" required>
-                <div class="alertmessages alert-danger" ng-show="loginform.password.$error.required && loginform.password.$dirty">
-                    Please enter your password!
+                <div class="form-group">
+                    <label for="Password" class="col-md-4 control-label">Password:</label>
+                    <div class="col-md-8">
+                        <input type="password" class="form-control" ng-model="formData.password" name="password" required>
+                    </div>
+                    <div class="alertmessages alert-danger" ng-show="loginform.password.$error.required && loginform.password.$dirty">
+                        Please enter your password!
+                    </div>
                 </div>
+
+
+
+                <!--whole form: {{loginform.$error}}
+                <br>
+                name: {{loginform.user.$error}}
+                <br>
+                email: {{loginform.password.$error}}
+                <br />-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">&nbsp;</label>
+                    <div class="col-md-8">
+                        <button type="submit" ng-click="processLogin()" ng-disabled="loginform.$invalid" style="width:210px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Submit request&nbsp;</button>
+                    </div>
+                </div>
+
             </div>
-
-
-
-            <!--whole form: {{loginform.$error}}
-            <br>
-            name: {{loginform.user.$error}}
-            <br>
-            email: {{loginform.password.$error}}
-            <br />-->
-
-            <button type="submit" ng-click="processLogin()" ng-disabled="loginform.$invalid" style="width:210px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Submit request&nbsp;</button>
-
         </div>
     </div>
 </form>

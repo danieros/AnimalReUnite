@@ -433,7 +433,7 @@ li {
 }
 
     .btn-primary-orange-home:hover {
-        background-color: yellow;
+        background-color: lightgray;
         border-color: #ffffff;
         color: #000;
         font-size: 15px !important;
@@ -658,7 +658,7 @@ input[type="select"] {
 }
 
 .bootstrap-dialog .bootstrap-dialog-message {
-    font-size: 13px !important;
+    font-size: 11px !important;
 }
 
 .ulspecial {
@@ -784,4 +784,63 @@ h3
 .smalltext{
 	padding-top: 5px;
 	font-size: 16px;
+}
+
+
+
+/* Work without ngAnimate included */
+flip > flip-front, flip > flip-back {
+  display: block;
+}
+flip > .flip-visible {
+  display: block;
+}
+
+/* Default height / width */
+flip {
+  /*height: 100px;
+  width: 100px;*/
+}
+
+/* Position absolutely and both visible */
+flip {
+  display: block;
+  position: relative;
+}
+flip > flip-front, flip > flip-back {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Common */
+flip > flip-front, flip > flip-back { 
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden; 
+  /* Time can be overriden */
+  transition: -webkit-transform 0.5s; 
+  transition: transform 0.5s;
+}
+
+/* Front visible */
+flip > flip-front {
+  -webkit-transform:  perspective(800px) rotateY(0); 
+  transform:  perspective(800px) rotateY(0);  
+}
+flip > flip-back {
+ -webkit-transform:  perspective(800px) rotateY(180deg); 
+ transform:  perspective(800px) rotateY(180deg);   
+}
+
+/* Back visible */
+flip.flip-back > flip-front {
+  -webkit-transform:  perspective(800px) rotateY(-180deg); 
+  transform:  perspective(800px) rotateY(-180deg);  
+}
+flip.flip-back > flip-back {
+ -webkit-transform:  perspective(800px) rotateY(0); 
+ transform:  perspective(800px) rotateY(0);   
 }
