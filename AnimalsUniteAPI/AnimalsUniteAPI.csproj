@@ -656,6 +656,7 @@
     <Content Include="Scripts\jssor.slider.js" />
     <Content Include="Scripts\mfb-directive.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\myVaraiables.js" />
     <Content Include="Scripts\ngNotificationsBar.min.js" />
     <Content Include="Scripts\ngToast.js" />
     <Content Include="Scripts\respond.js" />

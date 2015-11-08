@@ -665,6 +665,22 @@ input[type="select"] {
     list-style-image: url('../Images/petpaw.png');
 }
 
+.ulspecialanimal
+{
+list-style-type: none;
+padding: 10px 0 10px;
+margin: 0;
+}
+
+.lispecialanimal
+{
+background-image:url('../Images/petpaw.png');
+background-repeat: no-repeat;
+background-position: 1em 0em;
+padding-left: 3.6em;
+padding-bottom: 10px;
+}
+
 .ulspca
 {
 list-style-type: none;

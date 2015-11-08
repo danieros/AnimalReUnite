@@ -440,6 +440,63 @@ message1];
         setCookie("showintro", "true");
     }
 
+    
+    $scope.help1 = function () {
+        BootstrapDialog.show({
+            title: help1TitleVar(), //external myVariables.js
+            message: help1messsageVar(), //external myVariables.js
+                buttons: [{
+                    label: 'OK',
+                    cssClass: 'btn-dialogcloseall',
+                    action: function (dialog) {
+                        dialog.close();
+                    }
+                }]
+        });
+    };
+
+    $scope.help2 = function () {
+        BootstrapDialog.show({
+            title: help2TitleVar(), //external myVariables.js
+            message: help2messsageVar(), //external myVariables.js
+            buttons: [{
+                label: 'OK',
+                cssClass: 'btn-dialogcloseall',
+                action: function (dialog) {
+                    dialog.close();
+                }
+            }]
+        });
+    };
+
+    $scope.help3 = function () {
+        BootstrapDialog.show({
+            title: help3TitleVar(), //external myVariables.js
+            message: help3messsageVar(), //external myVariables.js
+            buttons: [{
+                label: 'OK',
+                cssClass: 'btn-dialogcloseall',
+                action: function (dialog) {
+                    dialog.close();
+                }
+            }]
+        });
+    };
+
+    $scope.help4 = function () {
+        BootstrapDialog.show({
+            title: help4TitleVar(), //external myVariables.js
+            message: help4messsageVar(), //external myVariables.js
+            buttons: [{
+                label: 'OK',
+                cssClass: 'btn-dialogcloseall',
+                action: function (dialog) {
+                    dialog.close();
+                }
+            }]
+        });
+    };
+
 
     $scope.messages = function () {
         notifications.closeAll();
