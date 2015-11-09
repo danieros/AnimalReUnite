@@ -74,7 +74,7 @@ app.controller('uploadimageController', function ($scope, $location, ModalServic
 });
 
 
-app.controller('LoginController', function ($scope, $http, $location, $route) {
+app.controller('LoginController', function ($scope, $http, $location, $route, $window, userService) {
     // create a blank object to hold our form information
     // $scope will allow this to pass between controller and view
     $scope.formData = {};
@@ -111,7 +111,13 @@ app.controller('LoginController', function ($scope, $http, $location, $route) {
                     });
                 });
 
+
+                userService.setlogin(true)
                 $location.path('/');
+                //                $window.location.href = "StaticViews/Index.html#";
+                //               $window.location.reload();
+
+
 
             }
             else {
@@ -271,7 +277,7 @@ app.controller('contactUsController', function ($scope, $http, $location) {
 
 
 app.controller('NavController', function ($scope, $location) {
-    console.log("username = " + getCookie("yourname"));
+    // console.log("username = " + getCookie("yourname"));
     if (getCookie("yourname") == 'undefined' || getCookie("yourname") == null || getCookie("yourname") == "") {
         console.log("NavController = 1");
         $scope.showlogin = true;
@@ -320,17 +326,20 @@ function resetall() {
     $('#p6').hide();
 }
 
-app.controller('mainController', function ($scope, notifications, $route, $location) {
+app.controller('mainController', function ($scope, notifications, $route, $location, userService, $window) {
 
+    console.log("userService.getlogin = " + userService.getlogin);
+    if (userService.getlogin() == true) {
+        $window.location.href = "StaticViews/Index.html#";
+        $window.location.reload();
+    }
 
+    $scope.userloggedin = checkifuserloggedin();
 
     $scope.side = 'front';
     $scope.toggle = function () {
         $scope.side = $scope.side == 'back' ? 'front' : 'back';
     }
-
-
-
 
     var one_day = 1000 * 60 * 60 * 24;
 
@@ -440,18 +449,18 @@ message1];
         setCookie("showintro", "true");
     }
 
-    
+
     $scope.help1 = function () {
         BootstrapDialog.show({
             title: help1TitleVar(), //external myVariables.js
             message: help1messsageVar(), //external myVariables.js
-                buttons: [{
-                    label: 'OK',
-                    cssClass: 'btn-dialogcloseall',
-                    action: function (dialog) {
-                        dialog.close();
-                    }
-                }]
+            buttons: [{
+                label: 'OK',
+                cssClass: 'btn-dialogcloseall',
+                action: function (dialog) {
+                    dialog.close();
+                }
+            }]
         });
     };
 
@@ -504,35 +513,9 @@ message1];
     };
 
 
-    $scope.showError = function () {
-        notifications.showSuccess("help");
-        notifications.showError({
-            message: 'Oops! Something bad just happened! (hides faster)',
-            hideDelay: 1500, //ms
-            hide: true //bool
-        });
-    };
-
-    notifications.showError();
-
-    //$scope.showError = function () {
-    //    notifications.showError({
-    //        message: 'Oops! Something bad just happened! (hides faster)',
-    //        hideDelay: 1500, //ms
-    //        hide: true //bool
-    //    });
-    //};
 
 
-    $scope.showWarning = function () {
-        notifications.showWarning('Hey! Take a look <em>here</em>..');
-        $scope.$apply();
-    };
 
-
-    $scope.showSuccess = function () {
-        notifications.showSuccess('Congrats! Life is great!');
-    };
 
 
 
@@ -707,7 +690,7 @@ app.controller('validateCtrl', function ($scope) {
     $scope.email = '';
 });
 
-app.controller('PetAdoptionDetailController', function ($scope, $http, $sce, userService) {
+app.controller('PetAdoptionDetailController', function ($scope, $http, $sce, $location, userService) {
     console.log(userService.getsetspcaid());
 
     var spcaidVal;
@@ -732,40 +715,45 @@ app.controller('PetAdoptionDetailController', function ($scope, $http, $sce, use
        $scope.physicaladdress = response[0].physicaladdress;
    });
 
+    $scope.goBack = function (hash) {
+        console.log(hash);
+        $location.path(hash);
+    }
+
     $scope.selection = [];
 
     //Google maps
     //function initialize() {
 
 
-    var lat = -26.282623;
-    var lng = 28.350689;
-    var myLatLng = { lat: lat, lng: lng };
+    //var lat = -26.282623;
+    //var lng = 28.350689;
+    //var myLatLng = { lat: lat, lng: lng };
 
-    $(function () {
-        var mapOptions = {
-            //center: new google.maps.LatLng(myLatLng),
-            center: myLatLng,
-            zoom: 12,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            scrollwheel: false,
-            draggable: false,
-            panControl: true,
-            zoomControl: true,
-            mapTypeControl: true,
-            scaleControl: true,
-            streetViewControl: true,
-            overviewMapControl: true,
-            rotateControl: true,
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    //$(function () {
+    //    var mapOptions = {
+    //        //center: new google.maps.LatLng(myLatLng),
+    //        center: myLatLng,
+    //        zoom: 12,
+    //        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    //        scrollwheel: false,
+    //        draggable: false,
+    //        panControl: true,
+    //        zoomControl: true,
+    //        mapTypeControl: true,
+    //        scaleControl: true,
+    //        streetViewControl: true,
+    //        overviewMapControl: true,
+    //        rotateControl: true,
+    //    };
+    //    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Hello World!'
-        });
-    });
+    //    var marker = new google.maps.Marker({
+    //        position: myLatLng,
+    //        map: map,
+    //        title: 'Hello World!'
+    //    });
+    //});
     // google.maps.event.addDomListener(window, 'load', initialize);
 
 });

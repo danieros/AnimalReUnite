@@ -57,3 +57,11 @@ this.help4messsageVar = function () {
     helpmesssage += '</ul>';
     return helpmesssage;
 };
+
+this.checkifuserloggedin = function () {
+    var checkifuserloggedinVar = true;
+    if (getCookie("yourname") == 'undefined' || getCookie("yourname") == null || getCookie("yourname") == "") {
+        checkifuserloggedinVar = false;
+    }
+    return checkifuserloggedinVar;
+};

@@ -25,7 +25,7 @@
                         <li style="background-color: #FFBD00;"><img class="img-circle" border="0" src="https://petsocietyphotos.blob.core.windows.net/animalphotos/parrotHead.jpg" width="40" alt="jQuery Image slider" title="jQuery Image slider" /></li>
                     </ul>
                 </td>
-                <td>
+                <td ng-cloak>
                     Welcome {{username}}
                 </td>
                 <td style="width: 40px;">
@@ -68,19 +68,34 @@
 
             <!-- First slide -->
             <div class="item active">
-                <div class="carousel-caption">
-                    <a href="#Register">
-                        <h3 class="icon-container" data-animation="animated bounceInDown">
-                            <span class="glyphicon glyphicon-user"></span>
-                        </h3>
-                    </a>
-                    <br />
-
-                    <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
-                        <a href="#Register">
-                            Register TODAY and by end of week you will be amazed how much we can assist you and how much fun this web site can be.
+                <div class="carousel-caption"> 
+                    <div ng-if="userloggedin == true">
+                        <a href="#Temp1">
+                            <h3 style="background-color: forestgreen" class="icon-container" data-animation="animated bounceInDown">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </h3>
                         </a>
-                    </h3>
+                        <br />
+                        <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
+                            <a href="#Temp1">
+                                Thank you for registering.  All the modules will be available by 16 November but we will inform you by message and email. In meantime have a look around using menu (on mobile top right).
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div ng-if="userloggedin == false">
+                        <a href="#Register">
+                            <h3 class="icon-container" data-animation="animated bounceInDown">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </h3>
+                        </a>
+                        <br />
+                        <h3 style="font-size: 14px;" data-animation="animated bounceInLeft"> 
+                            <a href="#Register">
+                                Register TODAY and by beginning of next week you will be amazed how much we can assist you and how much fun this web site can be.
+                            </a>
+                        </h3>
+                    </div>
 
                     <a class="btn btn-primary-orange-home" ng-click="showintro()">Show intro &raquo;</a>
                 </div>

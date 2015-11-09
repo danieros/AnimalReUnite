@@ -239,6 +239,12 @@ app.factory('userService', function () {
         },
         getphoto: function () {
             return userData.photo;
+        },
+        setlogin: function (login) {
+            userData.login = login;
+        },
+        getlogin: function () {
+            return userData.login;
         }
     };
 });

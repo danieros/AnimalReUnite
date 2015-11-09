@@ -860,3 +860,7 @@ flip.flip-back > flip-back {
  -webkit-transform:  perspective(800px) rotateY(0); 
  transform:  perspective(800px) rotateY(0);   
 }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

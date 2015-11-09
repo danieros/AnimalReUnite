@@ -1,13 +1,14 @@
 ﻿<div class="container-fluid body-content">
 
-
-    <img class="img-responsive" style="float:left; max-height:50px; padding-right: 10px;" src="../Images/spca.jpg" />
-
-    <div class="page-header">
-        <h1>{{nameofspca}}</h1>
+    <div style="padding-bottom:10px;">
+        <button type="button" style="font-size: 20px;" ng-click="goBack('/PetAdoption')" class="btn-lgsmall btn-primary-black-verysmall btn-lglgsmall">&nbsp; &laquo; &nbsp;</button>
     </div>
 
-    <div>
+    <div class="mypage-headersmall">
+        {{nameofspca}}
+    </div>
+    <br />
+    <div class="jumbotron">
         <div class="col-sm-3">
             <i class="fa fa-phone"></i> {{office}} (office)
         </div>
@@ -22,10 +23,10 @@
         </div>
     </div>
     <br />
-    <div id="map-canvas"></div>
+    <!--<div id="map-canvas"></div>-->
 
     <!--Google Maps API-->
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnycWatbGyK6ldFqErjFtko1yeMclNUOA&amp;sensor=true"></script>
+    <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnycWatbGyK6ldFqErjFtko1yeMclNUOA&amp;sensor=true"></script>-->
 
 
 
