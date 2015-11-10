@@ -879,6 +879,11 @@ app.controller('registerpetController', function ($scope, $sce, $location, $http
 
 app.controller('petsregisteredController', function ($scope, $location, $http, $sce) {
 
+    $scope.gotoPage = function (hash) {
+        $location.path(hash);
+    }
+
+    $scope.userloggedin = checkifuserloggedin();
 
     if (getCookie("yourname") == 'undefined' || getCookie("yourname") == null || getCookie("yourname") == "") {
         $scope.showlogin = true;

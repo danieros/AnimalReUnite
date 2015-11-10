@@ -76,11 +76,13 @@
                             </h3>
                         </a>
                         <br />
-                        <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
-                            <a href="#Temp1">
-                                Thank you for registering.  All the modules will be available by 16 November but we will inform you by message and email. In meantime have a look around using menu (on mobile top right).
-                            </a>
-                        </h3>
+                        <!--<h3 style="font-size: 14px;" data-animation="animated bounceInLeft">-->
+                            <div class="carouseltext" data-animation="animated bounceInLeft">
+                                <a href="#Temp1" style="text-shadow: none; font-weight: normal;">
+                                    Thank you for registering.  All the modules will be available by 16 November but we will inform you by message and email.
+                                </a>
+                            </div>
+                        <!--</h3>-->
                     </div>
 
                     <div ng-if="userloggedin == false">
@@ -169,7 +171,7 @@
             <div class="col-sm-3">
                 <div class="btn-group">
                     <button type="button" ng-click="help1()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="gotoPage('/Temp1')" class="btn btn-primary-orange-home">
+                    <button type="button" ng-click="gotoPage('/PetsRegistered')" class="btn btn-primary-orange-home">
                         Upload my pet
 
                         &raquo;

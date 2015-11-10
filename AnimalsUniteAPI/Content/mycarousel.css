@@ -1,55 +1,67 @@
 ﻿.skyblue {
-	background-color: #0E46A7;
+    background-color: #0E46A7;
 }
+
 .deepskyblue {
-	background-color: #0E46A7;
+    background-color: #0E46A7;
 }
+
 .darkerskyblue {
-	background-color: #0E46A7;
+    background-color: #0E46A7;
 }
+
 .carousel-indicators {
-	bottom: 0;
+    bottom: 0;
 }
+
 .carousel-control.right,
 .carousel-control.left {
-	background-image: none;
+    background-image: none;
 }
+
 .carousel .item {
-	min-height: 350px; 
-	height: 100%;
-	width:100%; 
+    min-height: 350px;
+    height: 100%;
+    width: 100%;
 }
+
 .carousel-caption h3,
 .carousel .icon-container,
 .carousel-caption button {
-	background-color: #0E46A7;
+    background-color: #0E46A7;
 }
+
 .carousel-caption h3 {
-	padding: .5em;
+    padding: .5em;
 }
+
 .carousel .icon-container {
-	display: inline-block;
-	font-size: 25px;
-	line-height: 25px;
-	padding: 1em;
-	text-align: center;
-	border-radius: 50%;
+    display: inline-block;
+    font-size: 25px;
+    line-height: 25px;
+    padding: 1em;
+    text-align: center;
+    border-radius: 50%;
 }
+
 .carousel-caption button {
-	border-color: #00bfff;
-	margin-top: 1em; 
+    border-color: #00bfff;
+    margin-top: 1em;
 }
 
 /* Animation delays */
 .carousel-caption h3:first-child {
-	animation-delay: 1s;
+    animation-delay: 1s;
 }
+
 .carousel-caption h3:nth-child(2) {
-	animation-delay: 2s;
+    animation-delay: 2s;
 }
+
 .carousel-caption button {
-	animation-delay: 3s;
+    animation-delay: 3s;
 }
+
 .carousel-indicators li {
     background-color: blue;
     border: 1px solid #fff;
@@ -61,9 +73,26 @@
     width: 20px;
     background-color: #ff8300;
 }
+
 .carousel-indicators .active {
     background-color: #0E46A7;
     height: 22px;
     margin: 0;
     width: 22px;
+}
+
+.carouseltext {
+    border: 1px solid #fff;
+    background-color: #0e46a7;
+    color: white !important;
+    font-weight: normal;
+    text-align: center;
+    font-size: 13px;
+    border: solid 1px #CCC;
+    -moz-box-shadow: 5px 5px 0px #999;
+    -webkit-box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 6px;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 20px;
 }
