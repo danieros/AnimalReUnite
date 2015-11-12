@@ -1,11 +1,11 @@
 ﻿
-app.controller('faqController', function ($scope, $location, ModalService, userService) {
+app.controller('faqController', function ($scope, $location, userService) {
 
 
 });
 
 
-app.controller('wallofheroesController', function ($scope, $location, ModalService, userService, $http) {
+app.controller('wallofheroesController', function ($scope, $location, userService, $http) {
     $http.get("/api/Heroes/GetHeroes")
    .success(function (response) {
        $scope.names = response;
@@ -25,7 +25,7 @@ app.controller('wallofheroesController', function ($scope, $location, ModalServi
 
 });
 
-app.controller('editimageController', function ($scope, $location, ModalService, userService) {
+app.controller('editimageController', function ($scope, $location, userService) {
 
     //Go back
     $scope.goBack = function (hash) {
@@ -34,7 +34,7 @@ app.controller('editimageController', function ($scope, $location, ModalService,
     }
 });
 
-app.controller('uploadimageController', function ($scope, $location, ModalService, userService) {
+app.controller('uploadimageController', function ($scope, $location, userService) {
 
     //Go back
     $scope.goBack = function (hash) {
@@ -826,7 +826,7 @@ app.controller('registerpetController', function ($scope, $sce, $location, $http
         var petname = getCookie("petname");
         $scope.previouspetname = petname;
 
-        $http.get("http://www.ecare4me.com/United/api/PetDetails/getdetails?memberid=" + memberid + "&petname=" + petname)
+        $http.get("/api/PetDetails/getdetails?memberid=" + memberid + "&petname=" + petname)
 .success(function (response) {
     $scope.names = response;
     $scope.petname = response[0].NameOfDog;
@@ -835,7 +835,7 @@ app.controller('registerpetController', function ($scope, $sce, $location, $http
     $scope.typeofanimal = response[0].AnimalTypeID;
     $scope.animalid = response[0].AnimalID;
 
-    $http.get("http://www.ecare4me.com/United/api/UniqueFeatures/GetUniquefeatures?animalid=" + response[0].AnimalID)
+    $http.get("/api/UniqueFeatures/GetUniquefeatures?animalid=" + response[0].AnimalID)
 .success(function (response) {
     for (var feauture in response) {
         $scope.tasklist.push({ "name": response[feauture].Feature });
@@ -877,11 +877,40 @@ app.controller('registerpetController', function ($scope, $sce, $location, $http
     $scope.breed = window.name;
 });
 
-app.controller('petsregisteredController', function ($scope, $location, $http, $sce) {
+app.controller('petsregisteredController', function ($scope, $location, $http, $sce, $anchorScroll, $timeout) {
 
     $scope.gotoPage = function (hash) {
         $location.path(hash);
     }
+
+    $scope.gotoAnchor = function (x) {
+        console.log("newHash = " + 'anchor' + x);
+        var newHash = 'anchor' + x;
+
+        var old = $location.hash();
+        $location.hash(newHash).replace();
+        $anchorScroll();
+
+        //$timeout(function () {
+        //    $location.hash(newHash);
+        //    $anchorScroll();
+        //})
+
+        //if ($location.hash() !== newHash)
+        //{
+        //    console.log(1);
+        //    // set the $location.hash to `newHash` and
+        //    // $anchorScroll will automatically scroll to it
+        //    $location.hash('anchor' + x);
+        //}
+        //else
+        //{
+        //    console.log(2);
+        //    // call $anchorScroll() explicitly,
+        //    // since $location.hash hasn't changed
+        //    $anchorScroll();
+        //}
+    };
 
     $scope.userloggedin = checkifuserloggedin();
 
@@ -891,7 +920,7 @@ app.controller('petsregisteredController', function ($scope, $location, $http, $
     }
     else {
         var memberid = getCookie("memberid");
-        $http.get("http://petsupload.azurewebsites.net/api/petsregistered/getanimals?memberid=" + memberid)
+        $http.get("/api/petsregistered/getanimals?memberid=" + memberid)
 .success(function (response) { $scope.names = response; });
 
 
@@ -911,9 +940,25 @@ app.controller('petsregisteredController', function ($scope, $location, $http, $
 
     $scope.deleteAnimal = function (x) {
         console.log(x);
-        bootbox.confirm("Are you sure you want to remove " + x + " from your list of registered animals. If he/she passed away our sincere condolences?", function (result) {
-            console.log(result);
+
+        BootstrapDialog.show({
+            message: 'Are you sure you want to remove ' + x + ' from your list of registered animals. If he/she passed away our sincere condolences?',
+            buttons: [{
+                label: 'Button 2',
+                cssClass: 'btn-primary',
+                action: function (dialogItself) {
+                    dialogItself.close();
+                }
+            }, {
+                icon: 'glyphicon glyphicon-ban-circle',
+                label: 'Button 3',
+                cssClass: 'btn-warning',
+                action: function (dialogItself) {
+                    dialogItself.close();
+                }
+            }]
         });
+
     }
 
     //$http.get("http://localhost:18643/api/petsregistered/getanimals?memberid=1")

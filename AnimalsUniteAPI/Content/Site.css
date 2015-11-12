@@ -70,7 +70,7 @@ body {
     border: solid 1px #CCC;
     -moz-box-shadow: 5px 5px 0px #999;
     -webkit-box-shadow: 5px 5px 0px #999;
- box-shadow: 10px 10px 5px grey;
+    box-shadow: 10px 10px 5px grey;
     border-radius: 6px;
     padding-bottom: 5px;
     padding-top: 5px;
@@ -89,6 +89,19 @@ body {
     border-radius: 6px;
     padding-bottom: 5px;
     padding-top: 5px;
+}
+
+.subheading {
+    background-color: black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 14px !important;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffbd00;
+    text-align:center;
+    border: 1px solid white;
 }
 
 .labels {
@@ -450,6 +463,11 @@ li {
     width: 200px;
 }
 
+    .btn-primary-orange-slider:hover {
+        background-color: lightgray;
+        cursor: pointer;
+    }
+
 .btn-primary-disable-home {
     background-color: #999;
     border-color: #ffffff;
@@ -469,9 +487,13 @@ btn-primary-green-verysmall {
     color: #ffffff;
     background-color: #0e46a7;
     border-color: #FFFFFF;
-    width: 300px;
+    width: 100%;
     margin-top: 10px;
 }
+
+    .btn-primary-black-small:hover {
+        background-color: darkgrey;
+    }
 
 .btn-primary-black-verysmall {
     color: #ffffff;
@@ -581,8 +603,7 @@ ul {
     height: 260px;
 }
 
-.login-dialog .modal-body 
-{
+.login-dialog .modal-body {
     height: 80px;
 }
 
@@ -665,36 +686,32 @@ input[type="select"] {
     list-style-image: url('../Images/petpaw.png');
 }
 
-.ulspecialanimal
-{
-list-style-type: none;
-padding: 10px 0 10px;
-margin: 0;
+.ulspecialanimal {
+    list-style-type: none;
+    padding: 10px 0 10px;
+    margin: 0;
 }
 
-.lispecialanimal
-{
-background-image:url('../Images/petpaw.png');
-background-repeat: no-repeat;
-background-position: 1em 0em;
-padding-left: 3.6em;
-padding-bottom: 10px;
+.lispecialanimal {
+    background-image: url('../Images/petpaw.png');
+    background-repeat: no-repeat;
+    background-position: 1em 0em;
+    padding-left: 3.6em;
+    padding-bottom: 10px;
 }
 
-.ulspca
-{
-list-style-type: none;
-padding: 0;
-margin: 0;
+.ulspca {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.lispca
-{
-background-image:url('../Images/rsz_1rsz_1rsz_spcalogo.png');
-background-repeat: no-repeat;
-background-position: 1em 0em;
-padding-left: 3.6em;
-padding-bottom: 10px;
+.lispca {
+    background-image: url('../Images/rsz_1rsz_1rsz_spcalogo.png');
+    background-repeat: no-repeat;
+    background-position: 1em 0em;
+    padding-left: 3.6em;
+    padding-bottom: 10px;
 }
 
 /*.ulspca {
@@ -706,40 +723,51 @@ padding-bottom: 10px;
     text-align: center;
 }
 
-.dialognumber
-{
+.dialognumber {
     font-size: 10px;
     color: lightgray;
 }
 
 /*FAQS*/
-#faqs h3	{ cursor:pointer; }
-#faqs h3.active	{ color:yellow; }
-#faqs div { height:0; overflow:hidden; position:relative; }
-#faqs div p	{ padding:0; margin-bottom:15px; }
-h3
-{
+#faqs h3 {
+    cursor: pointer;
+}
+
+    #faqs h3.active {
+        color: yellow;
+    }
+
+#faqs div {
+    height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+    #faqs div p {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+h3 {
     font-size: 16px;
 }
 
-.navbar-nav > li > a
-{
+.navbar-nav > li > a {
     font-size: 11px !important;
 }
 
-.responsivebrand
-{
+.responsivebrand {
     padding: 5px 0 0 5px;
     display: block;
     height: auto;
     max-width: 70%;
 }
 
-.navbar-toggle{
+.navbar-toggle {
     margin-top: 15px !important;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     font-size: 10px !important;
 }
 
@@ -757,15 +785,14 @@ h3
 }*/
 
 @font-face {
-    font-family:marker__font;
+    font-family: marker__font;
     src: local(marker__font), url('../fonts/marker.ttf') format('opentype');
 }
 
-.grafitti
-{
-     font-family:marker__font;
-        font-size:20px;
-        color: blue;
+.grafitti {
+    font-family: marker__font;
+    font-size: 20px;
+    color: blue;
 }
 
 
@@ -774,93 +801,102 @@ h3
 
 
 
-#clockdiv{
-	font-family: sans-serif;
-	color: #fff;
-	display: inline-block;
-	font-weight: 100;
-	text-align: center;
-	font-size: 30px;
+#clockdiv {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
 }
 
-#clockdiv > div{
-	padding: 10px;
-	border-radius: 3px;
-	background: #00BF96;
-	display: inline-block;
-}
+    #clockdiv > div {
+        padding: 10px;
+        border-radius: 3px;
+        background: #00BF96;
+        display: inline-block;
+    }
 
-#clockdiv div > span{
-	padding: 15px;
-	border-radius: 3px;
-	background: #0e46a7;
-	display: inline-block;
-}
+    #clockdiv div > span {
+        padding: 15px;
+        border-radius: 3px;
+        background: #0e46a7;
+        display: inline-block;
+    }
 
-.smalltext{
-	padding-top: 5px;
-	font-size: 16px;
+.smalltext {
+    padding-top: 5px;
+    font-size: 16px;
 }
 
 
 
 /* Work without ngAnimate included */
 flip > flip-front, flip > flip-back {
-  display: block;
+    display: block;
 }
+
 flip > .flip-visible {
-  display: block;
+    display: block;
 }
 
 /* Default height / width */
 flip {
-  /*height: 100px;
+    /*height: 100px;
   width: 100px;*/
 }
 
 /* Position absolutely and both visible */
 flip {
-  display: block;
-  position: relative;
-}
-flip > flip-front, flip > flip-back {
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
+    display: block;
+    position: relative;
 }
 
-/* Common */
-flip > flip-front, flip > flip-back { 
-  -webkit-backface-visibility: hidden; 
-  backface-visibility: hidden; 
-  /* Time can be overriden */
-  transition: -webkit-transform 0.5s; 
-  transition: transform 0.5s;
-}
+    flip > flip-front, flip > flip-back {
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
 
-/* Front visible */
-flip > flip-front {
-  -webkit-transform:  perspective(800px) rotateY(0); 
-  transform:  perspective(800px) rotateY(0);  
-}
-flip > flip-back {
- -webkit-transform:  perspective(800px) rotateY(180deg); 
- transform:  perspective(800px) rotateY(180deg);   
-}
+    /* Common */
+    flip > flip-front, flip > flip-back {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        /* Time can be overriden */
+        transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+    }
 
-/* Back visible */
-flip.flip-back > flip-front {
-  -webkit-transform:  perspective(800px) rotateY(-180deg); 
-  transform:  perspective(800px) rotateY(-180deg);  
-}
-flip.flip-back > flip-back {
- -webkit-transform:  perspective(800px) rotateY(0); 
- transform:  perspective(800px) rotateY(0);   
-}
+    /* Front visible */
+    flip > flip-front {
+        -webkit-transform: perspective(800px) rotateY(0);
+        transform: perspective(800px) rotateY(0);
+    }
+
+    flip > flip-back {
+        -webkit-transform: perspective(800px) rotateY(180deg);
+        transform: perspective(800px) rotateY(180deg);
+    }
+
+    /* Back visible */
+    flip.flip-back > flip-front {
+        -webkit-transform: perspective(800px) rotateY(-180deg);
+        transform: perspective(800px) rotateY(-180deg);
+    }
+
+    flip.flip-back > flip-back {
+        -webkit-transform: perspective(800px) rotateY(0);
+        transform: perspective(800px) rotateY(0);
+    }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+    display: none !important;
+}
+
+.ng-hide-add,
+.ng-hide-remove {
+    display: none !important;
 }
