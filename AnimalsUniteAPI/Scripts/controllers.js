@@ -1,6 +1,54 @@
 ﻿
-app.controller('faqController', function ($scope, $location, userService) {
+app.controller('diaryController', function ($scope, userService, $http, $location) {
 
+    $scope.goBack = function (hash) {
+        console.log(hash);
+        $location.path(hash);
+    }
+
+    
+    $scope.today = function () {
+        $scope.dt = new Date();
+    };
+    $scope.today();
+
+    $scope.clear = function () {
+        $scope.dt = null;
+    };
+
+    $scope.open = function ($event) {
+        $scope.status.opened = true;
+    };
+
+    $scope.setDate = function (year, month, day) {
+        $scope.dt = new Date(year, month, day);
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1
+    };
+
+    $scope.formats = ['dd MMMM yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+
+    $scope.status = {
+        opened: false
+    };
+
+    var memberid = getCookie("memberid");
+    $scope.memberid = memberid; //set hidden field
+    var petname = getCookie("petname");
+    $scope.petname = petname;
+
+    $http.get("/api/DiaryGet/GetDiary?memberid=" + memberid + "&petname=" + petname)
+         .success(function (response) {
+             $scope.names = response;
+             //$scope.DateInserted = response.DateInserted;
+         });
+});
+
+app.controller('faqController', function ($scope, $location, userService) {
 
 });
 
@@ -705,7 +753,7 @@ app.controller('PetAdoptionDetailController', function ($scope, $http, $sce, $lo
 
 
     //  $http.get("http://localhost:18643/api/SPCA/GetSPCA?memberid=l")
-    $http.get("http://petsupload.azurewebsites.net/api/SPCAsingle/GetSPCA?spcaid=" + spcaidVal)
+    $http.get("/api/SPCAsingle/GetSPCA?spcaid=" + spcaidVal)
    .success(function (response) {
        $scope.names = response;
        $scope.nameofspca = response[0].Name;
@@ -926,6 +974,11 @@ app.controller('petsregisteredController', function ($scope, $location, $http, $
 
 
         $scope.selection = [];
+    }
+
+    $scope.UpdateDiary = function (x) {
+        setCookie("petname", x);
+        $location.path('\Diary');
     }
 
     $scope.UpdateAnimal = function (x) {

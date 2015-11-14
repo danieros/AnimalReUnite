@@ -145,6 +145,27 @@ namespace AnimalsUniteAPI.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nameofuser, email, message);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertDiary")]
+		public ISingleResult<sp_InsertDiaryResult> sp_InsertDiary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> memberid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string diaryentry)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), memberid, name, diaryentry);
+			return ((ISingleResult<sp_InsertDiaryResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteDiary")]
+		public ISingleResult<sp_DeleteDiaryResult> sp_DeleteDiary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> diaryid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diaryid);
+			return ((ISingleResult<sp_DeleteDiaryResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetDiary")]
+		public ISingleResult<sp_GetDiaryResult> sp_GetDiary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> memberid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), memberid, name);
+			return ((ISingleResult<sp_GetDiaryResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_getdogbreedResult
@@ -1258,6 +1279,138 @@ namespace AnimalsUniteAPI.Models
 				if ((this._ReasonforFeature != value))
 				{
 					this._ReasonforFeature = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_InsertDiaryResult
+	{
+		
+		private System.Nullable<int> _mycounter;
+		
+		public sp_InsertDiaryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mycounter", DbType="Int")]
+		public System.Nullable<int> mycounter
+		{
+			get
+			{
+				return this._mycounter;
+			}
+			set
+			{
+				if ((this._mycounter != value))
+				{
+					this._mycounter = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_DeleteDiaryResult
+	{
+		
+		private System.Nullable<int> _mycounter;
+		
+		public sp_DeleteDiaryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mycounter", DbType="Int")]
+		public System.Nullable<int> mycounter
+		{
+			get
+			{
+				return this._mycounter;
+			}
+			set
+			{
+				if ((this._mycounter != value))
+				{
+					this._mycounter = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetDiaryResult
+	{
+		
+		private int _DiaryID;
+		
+		private int _AnimalID;
+		
+		private string _DiaryEntry;
+		
+		private string _mydateinserted;
+		
+		public sp_GetDiaryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaryID", DbType="Int NOT NULL")]
+		public int DiaryID
+		{
+			get
+			{
+				return this._DiaryID;
+			}
+			set
+			{
+				if ((this._DiaryID != value))
+				{
+					this._DiaryID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnimalID", DbType="Int NOT NULL")]
+		public int AnimalID
+		{
+			get
+			{
+				return this._AnimalID;
+			}
+			set
+			{
+				if ((this._AnimalID != value))
+				{
+					this._AnimalID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaryEntry", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string DiaryEntry
+		{
+			get
+			{
+				return this._DiaryEntry;
+			}
+			set
+			{
+				if ((this._DiaryEntry != value))
+				{
+					this._DiaryEntry = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mydateinserted", DbType="VarChar(11)")]
+		public string mydateinserted
+		{
+			get
+			{
+				return this._mydateinserted;
+			}
+			set
+			{
+				if ((this._mydateinserted != value))
+				{
+					this._mydateinserted = value;
 				}
 			}
 		}

@@ -253,6 +253,7 @@
       <DependentUpon>ContactUs.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DiaryGetController.cs" />
     <Compile Include="Controllers\DogBreedController.cs" />
     <Compile Include="Controllers\HeroesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -661,7 +662,9 @@
     <Content Include="Scripts\ngToast.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.14.3.min.js" />
     <Content Include="StaticPages\Recognise.html" />
+    <Content Include="StaticViews\Diary.html" />
     <Content Include="StaticViews\TheTeam.html" />
     <Content Include="StaticViews\About.html" />
     <Content Include="StaticViews\ContactUs.html" />

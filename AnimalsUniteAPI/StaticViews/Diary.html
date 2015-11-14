@@ -1,0 +1,69 @@
+﻿<div class="loading-dialog" data-loading>
+</div>
+
+<!--<form name="saveTemplateData" action="../Login.ashx" method="post">-->
+<form name="loginform">
+
+    <div class="container-fluid body-content">
+
+        <div style="padding-bottom:10px;">
+            <button type="button" style="font-size: 20px;" ng-click="goBack('/PetsRegistered')" class="btn-lgsmall btn-primary-black-verysmall btn-lglgsmall">&nbsp; &laquo; &nbsp;</button>
+        </div>
+
+        <div class="mypage-headersmall">
+            {{petname}}'s Diary
+        </div>
+        <br />
+
+        <div class="form-horizontal">
+            <div class="jumbotron">
+                <div class="form-group">
+                    <label for="Message" class="col-md-4 control-label" style="margin-bottom: 15px;">Date</label>
+                    <span class="input-group-btn" style="display: inline !important;">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    <input type="text" style="inline !important; width: 87% !important; max-width: 357px; margin-left: 10px;" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="Message" class="col-md-4 control-label">Type your diary entry</label>
+                    <div class="col-md-8">
+                        <textarea placeholder="Add a diary entry!" cols="10" rows="7" class="form-control" name="mydiary" ng-model="formData.mydiary" required></textarea>
+                    </div>
+
+                    <!--<pre>myForm.mypasssword.$error = {{ myForm.mypasssword.$error | json }}</pre>-->
+
+                    <div ng-if="myForm.mydiary.$dirty || submitted" ng-messages="myForm.mydiary.$error" style="color:yellow; margin-left: 15px;" role="alert">
+                        <div ng-message="required">You did not add a diary entry.</div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">&nbsp;</label>
+                    <div class="col-md-8">
+                        <button type="submit" ng-click="processLogin()" ng-disabled="loginform.$invalid" style="width:210px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Update diary&nbsp;&raquo;</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <br />
+
+        <div class="jumbotron" ng-repeat="x in names" style="margin-bottom: 10px">
+            <div class="subheading">
+                {{x.mydateinserted}}
+            </div>
+            <div style="font-size: 12px;">
+                {{x.DiaryEntry}}
+            </div>
+            <div style="float: right;">
+                <button type="submit" ng-click="processLogin()" ng-disabled="loginform.$invalid" style="width:100px; font-size: 12px !important;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Delete entry&nbsp;&raquo;</button>
+            </div>
+            <br />
+        </div>
+    </div>
+</form>

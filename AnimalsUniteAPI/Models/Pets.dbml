@@ -128,4 +128,28 @@
     <Parameter Name="message" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_InsertDiary" Method="sp_InsertDiary">
+    <Parameter Name="memberid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="diaryentry" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="sp_InsertDiaryResult">
+      <Column Name="mycounter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DeleteDiary" Method="sp_DeleteDiary">
+    <Parameter Name="diaryid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_DeleteDiaryResult">
+      <Column Name="mycounter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetDiary" Method="sp_GetDiary">
+    <Parameter Name="memberid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="sp_GetDiaryResult">
+      <Column Name="DiaryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiaryEntry" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="mydateinserted" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

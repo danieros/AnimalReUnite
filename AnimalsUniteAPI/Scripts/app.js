@@ -1,5 +1,5 @@
 ﻿//var app = angular.module('myApp', ['ngRoute', 'ngCookies', 'angularModalService', 'ngNotificationsBar', 'ngMessages']);
-var app = angular.module('myApp', ['ngRoute', 'ngCookies',  'ngNotificationsBar', 'ngMessages']);
+var app = angular.module('myApp', ['ngRoute', 'ngCookies', 'ngNotificationsBar', 'ngMessages', 'ui.bootstrap']);
 
 // configure our routes
 app.config(function ($routeProvider) {
@@ -90,6 +90,12 @@ app.config(function ($routeProvider) {
         .when('/PetsRegistered', {
             templateUrl: 'PetsRegistered.html',
             controller: 'petsregisteredController'
+        })
+
+         // route for pet diary
+        .when('/Diary', {
+            templateUrl: 'Diary.html',
+            controller: 'diaryController'
         })
 
         // route for logging in
