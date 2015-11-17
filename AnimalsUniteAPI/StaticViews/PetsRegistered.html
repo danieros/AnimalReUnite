@@ -56,7 +56,7 @@
                     </a>
                 </div>
                 <div class="col-sm-3" style="padding-bottom: 10px;">
-                    <a href="#RegisterPet" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Other type of pet&nbsp;&raquo;</a>
+                    <a href="#RegisterPet" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Other type of pet&nbsp;&raquo;</a>
                 </div>
             </div>
 
@@ -87,10 +87,10 @@
                                 <div  class="subheading">
                                     {{ x.NameOfDog }}
                                 </div>
-                                <button ng-click="deleteAnimal(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Remove pet&nbsp;&raquo; </button>
-                                <button ng-click="UpdateAnimal(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Update info&nbsp;&raquo;</button>
-                                <button ng-click="LoadPhotos(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Load photos&nbsp;&raquo;</button>
-                                <button ng-click="UpdateDiary(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Diary&nbsp;&raquo;</button>
+                                <button ng-click="deleteAnimal(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Remove pet&nbsp;&raquo; </button>
+                                <button ng-click="UpdateAnimal(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Update info&nbsp;&raquo;</button>
+                                <button ng-click="LoadPhotos(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-camera"></span>&nbsp;&nbsp;Load photos&nbsp;&raquo;</button>
+                                <button ng-click="UpdateDiary(x.NameOfDog)" style="width:200px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Diary&nbsp;&raquo;</button>
                             </td>
                         </tr>
                         <tr>

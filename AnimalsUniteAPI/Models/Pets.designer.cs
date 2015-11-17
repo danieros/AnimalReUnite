@@ -146,13 +146,6 @@ namespace AnimalsUniteAPI.Models
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertDiary")]
-		public ISingleResult<sp_InsertDiaryResult> sp_InsertDiary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> memberid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string diaryentry)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), memberid, name, diaryentry);
-			return ((ISingleResult<sp_InsertDiaryResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteDiary")]
 		public ISingleResult<sp_DeleteDiaryResult> sp_DeleteDiary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> diaryid)
 		{
@@ -165,6 +158,13 @@ namespace AnimalsUniteAPI.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), memberid, name);
 			return ((ISingleResult<sp_GetDiaryResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertDiary")]
+		public ISingleResult<sp_InsertDiaryResult> sp_InsertDiary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> memberid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string diaryentry, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> entrydate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), memberid, name, diaryentry, entrydate);
+			return ((ISingleResult<sp_InsertDiaryResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1284,32 +1284,6 @@ namespace AnimalsUniteAPI.Models
 		}
 	}
 	
-	public partial class sp_InsertDiaryResult
-	{
-		
-		private System.Nullable<int> _mycounter;
-		
-		public sp_InsertDiaryResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mycounter", DbType="Int")]
-		public System.Nullable<int> mycounter
-		{
-			get
-			{
-				return this._mycounter;
-			}
-			set
-			{
-				if ((this._mycounter != value))
-				{
-					this._mycounter = value;
-				}
-			}
-		}
-	}
-	
 	public partial class sp_DeleteDiaryResult
 	{
 		
@@ -1411,6 +1385,32 @@ namespace AnimalsUniteAPI.Models
 				if ((this._mydateinserted != value))
 				{
 					this._mydateinserted = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_InsertDiaryResult
+	{
+		
+		private System.Nullable<int> _mycounter;
+		
+		public sp_InsertDiaryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mycounter", DbType="Int")]
+		public System.Nullable<int> mycounter
+		{
+			get
+			{
+				return this._mycounter;
+			}
+			set
+			{
+				if ((this._mycounter != value))
+				{
+					this._mycounter = value;
 				}
 			}
 		}

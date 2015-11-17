@@ -1,12 +1,12 @@
 ﻿
-app.controller('diaryController', function ($scope, userService, $http, $location) {
+app.controller('diaryController', function ($scope, userService, $http, $location, $route, $timeout) {
 
     $scope.goBack = function (hash) {
         console.log(hash);
         $location.path(hash);
     }
 
-    
+
     $scope.today = function () {
         $scope.dt = new Date();
     };
@@ -37,15 +37,90 @@ app.controller('diaryController', function ($scope, userService, $http, $locatio
     };
 
     var memberid = getCookie("memberid");
-    $scope.memberid = memberid; //set hidden field
     var petname = getCookie("petname");
     $scope.petname = petname;
+
+
 
     $http.get("/api/DiaryGet/GetDiary?memberid=" + memberid + "&petname=" + petname)
          .success(function (response) {
              $scope.names = response;
              //$scope.DateInserted = response.DateInserted;
          });
+
+    //// process the form
+    $scope.processDiaryInsert = function () {
+        $scope.formData.memberid = memberid;
+        $scope.formData.petname = petname;
+        console.log("$scope.formData.mydate = " + $scope.formData.mydate);
+        
+        console.log(moment($scope.formData.mydate).format("D MMM YYYY"));
+        $scope.formData.mydate = moment($scope.formData.mydate).format("D MMM YYYY");
+       
+        $http({
+            method: 'POST',
+            url: '../DiaryInsert.ashx',
+            data: $.param($scope.formData),  // pass in data as strings
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+        })
+        .success(function (data) {
+            console.log(data);
+
+            $timeout(function () {
+                // 0 ms delay to reload the page.
+                $route.reload();
+            }, 0);
+
+            var types = [BootstrapDialog.TYPE_SUCCESS];
+
+            $.each(types, function (index, type) {
+                BootstrapDialog.show({
+                    type: type,
+                    title: 'Diary updated',
+                    cssClass: 'login-dialog',
+                    message: "Congratulations, you have update your pet's diary",
+                    buttons: [{
+                        label: 'Ok',
+                        cssClass: 'btn btn-primary-orange-home',
+                        action: function (dialogItself) {
+                            dialogItself.close();
+                        }
+
+                    }]
+                });
+            });
+        });
+    }
+
+    $scope.deleteEntry = function (y) {
+        var types = [BootstrapDialog.TYPE_WARNING];
+
+        $.each(types, function (index, type) {
+            BootstrapDialog.show({
+                type: type,
+                title: 'Are you sure you want to delete the diary entry?',
+                cssClass: 'login-dialog',
+                message: "Once deleted the entry can not be recovered so please be sure you want to delete the entry.",
+                buttons: [{
+                    label: 'Delete',
+                    cssClass: 'btn-primary',
+                    action: function (dialogItself) {
+                        console.log("you are about to delete " + y);
+                        dialogItself.close();
+                    }
+                }, {
+                    icon: 'glyphicon glyphicon-ban-circle',
+                    label: 'No',
+                    cssClass: 'btn-warning',
+                    action: function (dialogItself) {
+                        dialogItself.close();
+                    }
+                }]
+            });
+        });
+        console.log("DiaryEntry = " + y);
+    }
+    
 });
 
 app.controller('faqController', function ($scope, $location, userService) {

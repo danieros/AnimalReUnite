@@ -270,6 +270,12 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DiaryDelete.ashx.cs">
+      <DependentUpon>DiaryDelete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DiaryInsert.ashx.cs">
+      <DependentUpon>DiaryInsert.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -526,6 +532,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\a07.png" />
+    <Content Include="Images\AdExample.png" />
     <Content Include="Images\birdHead2.jpg" />
     <Content Include="Images\bloggr.png" />
     <Content Include="Images\brick-wall-dark.png" />
@@ -628,6 +635,8 @@
     <Content Include="fonts\NOSED___.TTF" />
     <Content Include="fonts\whoa.ttf" />
     <Content Include="ContactUs.ashx" />
+    <Content Include="DiaryInsert.ashx" />
+    <Content Include="DiaryDelete.ashx" />
     <None Include="Properties\PublishProfiles\PetsUnited.pubxml" />
     <Content Include="Scripts\controllers.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -657,6 +666,7 @@
     <Content Include="Scripts\jssor.slider.js" />
     <Content Include="Scripts\mfb-directive.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\myVaraiables.js" />
     <Content Include="Scripts\ngNotificationsBar.min.js" />
     <Content Include="Scripts\ngToast.js" />
