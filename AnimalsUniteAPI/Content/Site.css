@@ -6,8 +6,8 @@ body {
     /*background: -moz-linear-gradient(#304352, #989C9E); /* For Firefox 3.6 to 15 */
     /*background: linear-gradient(#304352, #989C9E); /* Standard syntax */
     background-color: #cfcfcf;
-    background-image: url();
     background-image: url('../Images/brick-wall-dark.png');
+
 }
 
 @media (min-width: 1200px) {
@@ -62,7 +62,7 @@ body {
 
 .mypage-header {
     border: 1px solid #fff;
-    background-color: #FFBD00;
+    background-color: #ffbd00;
     color: black;
     font-weight: bold !important;
     text-align: center;
@@ -102,6 +102,7 @@ body {
     color: #ffbd00;
     text-align:center;
     border: 1px solid white;
+    padding: 0 5px 0 5px;
 }
 
 .labels {

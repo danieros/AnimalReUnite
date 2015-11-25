@@ -532,6 +532,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\a07.png" />
+    <Content Include="Images\AboutUs.jpg" />
     <Content Include="Images\AdExample.png" />
     <Content Include="Images\birdHead2.jpg" />
     <Content Include="Images\bloggr.png" />
@@ -540,7 +541,9 @@
     <Content Include="Images\bulddogHead.jpg" />
     <Content Include="Images\catHead1.jpg" />
     <Content Include="Images\catHead2.jpg" />
+    <Content Include="Images\ContactUs.jpg" />
     <Content Include="Images\deviantart.png" />
+    <Content Include="Images\diary.png" />
     <Content Include="Images\digg.png" />
     <Content Include="Images\dogHead2.jpg" />
     <Content Include="Images\dogHead3.jpg" />
@@ -550,6 +553,7 @@
     <Content Include="Images\email.png" />
     <Content Include="Images\evernote.png" />
     <Content Include="Images\facebook.png" />
+    <Content Include="Images\faq.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\flickr.png" />
     <Content Include="Images\forrst.png" />
@@ -571,6 +575,7 @@
     <Content Include="Images\OctoberTransparent.png" />
     <Content Include="Images\parrotHead.jpg" />
     <Content Include="Images\petpaw.png" />
+    <Content Include="Images\Pets.jpg" />
     <Content Include="Images\pinterest.png" />
     <Content Include="Images\rss.png" />
     <Content Include="Images\rsz_1rsz_1rsz_goldstarnew.png" />
