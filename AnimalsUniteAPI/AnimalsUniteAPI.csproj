@@ -557,6 +557,7 @@
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\flickr.png" />
     <Content Include="Images\forrst.png" />
+    <Content Include="Images\FoundPet.jpg" />
     <Content Include="Images\GoldStarNew.png" />
     <Content Include="Images\goldstarSmall.png" />
     <Content Include="Images\google-plus.png" />
@@ -566,9 +567,11 @@
     <Content Include="Images\instagram.png" />
     <Content Include="Images\linkedin.png" />
     <Content Include="Images\loading.gif" />
+    <Content Include="Images\Login.jpg" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\Logo6.png" />
     <Content Include="Images\Logo7.png" />
+    <Content Include="Images\LostPet.jpg" />
     <Content Include="Images\main_bg.jpg" />
     <Content Include="Images\monkeyHead.jpg" />
     <Content Include="Images\October.png" />
@@ -577,6 +580,7 @@
     <Content Include="Images\petpaw.png" />
     <Content Include="Images\Pets.jpg" />
     <Content Include="Images\pinterest.png" />
+    <Content Include="Images\Register.jpg" />
     <Content Include="Images\rss.png" />
     <Content Include="Images\rsz_1rsz_1rsz_goldstarnew.png" />
     <Content Include="Images\rsz_1rsz_1rsz_spcalogo.png" />
@@ -590,6 +594,7 @@
     <Content Include="Images\twitter.png" />
     <Content Include="Images\vimeo.png" />
     <Content Include="Images\waiting.gif" />
+    <Content Include="Images\WallofHeroes.jpg" />
     <Content Include="Images\youtube.png" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-messages.js" />

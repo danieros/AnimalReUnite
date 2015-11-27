@@ -457,7 +457,15 @@ app.controller('mainController', function ($scope, notifications, $route, $locat
         $window.location.reload();
     }
 
-    $scope.userloggedin = checkifuserloggedin();
+    $scope.userloggedin = checkifuserloggedin(); //external js file
+
+    //#region Begin Set up sponsor heading and context
+    if ($scope.userloggedin == false)
+    {
+        console.log("not logged in");
+        $scope.SponsorHeading = "Please register or log in. If you registering make use "
+    }
+    //#regionend
 
     $scope.side = 'front';
     $scope.toggle = function () {
