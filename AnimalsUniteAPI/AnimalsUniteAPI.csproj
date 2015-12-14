@@ -685,6 +685,7 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.14.3.min.js" />
     <Content Include="StaticPages\Recognise.html" />
     <Content Include="StaticViews\Diary.html" />
+    <Content Include="StaticViews\PetSitting.html" />
     <Content Include="StaticViews\TheTeam.html" />
     <Content Include="StaticViews\About.html" />
     <Content Include="StaticViews\ContactUs.html" />

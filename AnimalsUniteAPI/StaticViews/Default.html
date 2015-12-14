@@ -7,14 +7,6 @@
 
     <notifications-bar class="notifications"></notifications-bar>
 
-    <div class="subheading">{{SponsorHeading}}</div>
-    <div class="subheading">
-        <a href="http://www.dandydogs.co.za/mobiledoggroomingwestrand.htm" target="_blank">
-            <img src="../Images/AdExample.png" class="img-responsive" style="border: 5px solid white;" />
-        </a>
-    </div>
-    <br />
-
     <div class="mypage-header">
         <!--<div class="slider">-->
         <table width="100%">
@@ -53,12 +45,49 @@
 
     </div>
 
+    <br />
+
+    <div class="subheading">{{SponsorHeading}}</div>
+
+    <!--<div class="row row-centered">
+        <div class="col-sm-3">
+            <div id="advancedblue" class="topcircle">
+                text
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div id="advancedpink" class="topcircle">
+                text
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div id="advancedred" class="topcircle" style="float: none; margin: 0 auto; margin-bottom: 5px;">
+                text
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div id="advancedgreen" class="topcircle" style="float: none; margin: 0 auto; margin-bottom: 5px;">
+                text
+            </div>
+        </div>
+    </div>-->
+
+    <!--<div class="subheading">
+        <a href="http://www.dandydogs.co.za/mobiledoggroomingwestrand.htm" target="_blank">
+            <img src="../Images/AdExample.png" class="img-responsive" style="border: 5px solid white;" />
+        </a>
+    </div>-->
+
+  
+
     <!--<div class="alert alert-success" ng-show="show">
         <strong>Success!</strong> You are sucessfully logged in as {{username}}
     </div>-->
-    <!--<div class="alert alert-warning" ng-show="showlogout">
-        <strong>Warning!</strong> You have logged out
-    </div>-->
+    <!--<
+     di
+     v class="alert alert-warning" ng-show="showlogout">
+         <strong>Warning!</strong> You have logged out
+     </div>-->
 
     <div id="mycarousal" class="carousel slide" data-ride="carousel">
 
@@ -74,7 +103,7 @@
 
             <!-- First slide -->
             <div class="item active">
-                <div class="carousel-caption"> 
+                <div class="carousel-caption">
                     <div ng-if="userloggedin == true">
                         <a href="#Temp1">
                             <h3 style="background-color: forestgreen" class="icon-container" data-animation="animated bounceInDown">
@@ -83,11 +112,11 @@
                         </a>
                         <br />
                         <!--<h3 style="font-size: 14px;" data-animation="animated bounceInLeft">-->
-                            <div class="carouseltext" data-animation="animated bounceInLeft">
-                                <a href="#Temp1" style="text-shadow: none; font-weight: normal;">
-                                    Thank you for registering.  All the modules will be available by 16 November but we will inform you by message and email.
-                                </a>
-                            </div>
+                        <div class="carouseltext" data-animation="animated bounceInLeft">
+                            <a href="#Temp1" style="text-shadow: none; font-weight: normal;">
+                                Thank you for registering.  All the modules will be available by 16 November but we will inform you by message and email.
+                            </a>
+                        </div>
                         <!--</h3>-->
                     </div>
 
@@ -98,7 +127,7 @@
                             </h3>
                         </a>
                         <br />
-                        <h3 style="font-size: 14px;" data-animation="animated bounceInLeft"> 
+                        <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
                             <a href="#Register">
                                 Register TODAY and by beginning of next week you will be amazed how much we can assist you and how much fun this web site can be.
                             </a>
@@ -177,7 +206,8 @@
             <div class="col-sm-3">
                 <div class="btn-group">
                     <button type="button" ng-click="help1()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="gotoPage('/PetsRegistered')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-info-sign" style="color: #0e46a7 !important;"></span>&nbsp;
+                    <button type="button" ng-click="gotoPage('/PetsRegistered')" class="btn btn-primary-orange-home">
+                        <span class="glyphicon glyphicon-info-sign" style="color: #0e46a7 !important;"></span>&nbsp;
                         My pet's info
 
                         &raquo;
@@ -187,7 +217,7 @@
 
             <div class="col-sm-3">
                 <div class="btn-group">
-                    <button type="button"  ng-click="help2()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="help2()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
                     <button type="button" ng-click="gotoPage('/Temp2')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-bullhorn" style="color: red !important;"></span>&nbsp;Lost my pet &raquo;</button>
                 </div>
             </div>
@@ -242,9 +272,9 @@
             </div>
             <div class="col-sm-6 col-md-2 col-xs-4">
 
-                        <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/cat1.jpg"
-                             width="100" alt="Generic placeholder thumbnail">
-                    
+                <img style="margin-bottom: 5px;" class="img-thumbnail" src="https://petsocietyphotos.blob.core.windows.net/animalphotosout/100/cat1.jpg"
+                     width="100" alt="Generic placeholder thumbnail">
+
 
             </div>
             <div class="col-sm-6 col-md-2 col-xs-4">
@@ -323,7 +353,7 @@
             <div id="b6" class="circlebox">United<a class="btn btn-lg-steps" data-toggle="modal" data-target="#myModal3"><i class="fa fa-question-circle fa-1x"></i></a></div>
         </div>
     </div>-->
-    
+
 
 
 
@@ -455,12 +485,24 @@
         </div>
 
     </div>-->
-    <!-- <div>
-         <!--<div class="row row-centered">
-             <div class="col-sm-12">
-                 <img src="../Content/Banner.png" class="img-responsive" />
-             </div>
-             <br />
-         </div>
-     </div>-->
+    <!-- <d
+     iv
+     >
+              <!--<div class="row row-centered">
+                  <div class="col-sm-12">
+                      <img src="../Content/Banner.png" class="img-responsive" />
+                  </div>
+                  <br />
+              </div>
+          </div>-->
+</div>
+</div>
+>
+<!--<div class="row row-centered">
+        <div class="col-sm-12">
+            <img src="../Content/Banner.png" class="img-responsive" />
+        </div>
+        <br />
+    </div>
+</div>-->
 </div>

@@ -463,7 +463,7 @@ app.controller('mainController', function ($scope, notifications, $route, $locat
     if ($scope.userloggedin == false)
     {
         console.log("not logged in");
-        $scope.SponsorHeading = "Please register or log in. If you registering make use "
+        $scope.SponsorHeading = "Please register or log in. If you registering by using a sponsor please use the sponsorhip code provided."
     }
     //#regionend
 

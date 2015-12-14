@@ -86,6 +86,13 @@ app.config(function ($routeProvider) {
             controller: 'SPCAController'
         })
 
+
+        // route for dog sitting
+        .when('/PetCare', {
+            templateUrl: 'PetSitting.html',
+            controller: 'petsittingController'
+        })
+
         // route for pet registered
         .when('/PetsRegistered', {
             templateUrl: 'PetsRegistered.html',
