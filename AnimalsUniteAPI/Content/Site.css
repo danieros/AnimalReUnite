@@ -5,8 +5,8 @@ body {
     /*background: -o-linear-gradient(#304352, #989C9E); /* For Opera 11.1 to 12.0 */
     /*background: -moz-linear-gradient(#304352, #989C9E); /* For Firefox 3.6 to 15 */
     /*background: linear-gradient(#304352, #989C9E); /* Standard syntax */
-    background-color: #cfcfcf;
-    background-image: url('../Images/brick-wall-dark.png');
+    background-color: #E8E8E8;
+    /*background-image: url('../Images/brick-wall-dark.png');*/
 }
 
 @media (min-width: 1200px) {
@@ -21,6 +21,21 @@ body {
     border-radius: 4px;
     margin-bottom: 20px;
     padding: 15px;
+}
+
+.alert-danger {
+    -moz-box-shadow: 5px 5px 0px #999;
+    -webkit-box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
+    border-color: red !important;
+}
+
+.alert-info
+{
+     -moz-box-shadow: 5px 5px 0px #999;
+    -webkit-box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
+    border-color: dodgerblue !important;
 }
 
 /*.navbar-collapse { background:#cccccc; /*replace with desired color*/
@@ -84,7 +99,7 @@ body {
     border: solid 1px #CCC;
     -moz-box-shadow: 5px 5px 0px #999;
     -webkit-box-shadow: 5px 5px 0px #999;
-    box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
     border-radius: 6px;
     padding-bottom: 5px;
     padding-top: 5px;
@@ -95,13 +110,16 @@ body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    font-size: 14px !important;
+    font-size: 12px !important;
     font-weight: bold;
     margin-bottom: 10px;
     color: #ffbd00;
     text-align: center;
     border: 1px solid white;
     padding: 5px 5px 5px 5px;
+    -moz-box-shadow: 5px 5px 0px #999;
+    -webkit-box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
 }
 
 .labels {
@@ -196,12 +214,11 @@ a {
 }
 
 .topcircle {
-width: 100px;
-	height: 100px;
-	
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
     /* width and height can be anything, as long as they're equal */
 }
 
@@ -223,15 +240,14 @@ width: 100px;
     background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, deeppink 0%, pink 100%, red 95%);
     background-image: -webkit-radial-gradient(45px 45px, circle cover, deeppink, red);
     background-image: radial-gradient(45px 45px 45deg, circle cover, deeppink 0%, pink 100%, red 95%);
-
 }
 
-#advancedpink:hover {
-    animation-name: spin;
-    animation-duration: 3s; /* 3 seconds */
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
+    #advancedpink:hover {
+        animation-name: spin;
+        animation-duration: 3s; /* 3 seconds */
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 
 /* Spinning, gradient circle; CSS only! */
 #advancedblue {
@@ -239,30 +255,30 @@ width: 100px;
     height: 100px;
     background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, blue 0%, lightblue 100%, red 95%);
     background-image: -webkit-radial-gradient(45px 45px, circle cover, blue, lightblue);
-    background-image: radial-gradient(45px 45px 45deg, circle cover, blue 0%, lightblue 100%, red 95%);    
+    background-image: radial-gradient(45px 45px 45deg, circle cover, blue 0%, lightblue 100%, red 95%);
 }
 
-#advancedblue:hover {
-     animation-name: spin;
-    animation-duration: 3s; /* 3 seconds */
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
+    #advancedblue:hover {
+        animation-name: spin;
+        animation-duration: 3s; /* 3 seconds */
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 
 #advancedred {
     width: 100px;
     height: 100px;
     background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, red 0%, lightblue 100%, pink 95%);
     background-image: -webkit-radial-gradient(45px 45px, circle cover, red, pink);
-    background-image: radial-gradient(45px 45px 45deg, circle cover, red 0%, red 100%, pink 95%); 
+    background-image: radial-gradient(45px 45px 45deg, circle cover, red 0%, red 100%, pink 95%);
 }
 
-#advancedred:hover {
-    animation-name: spin;
-    animation-duration: 3s; /* 3 seconds */
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
+    #advancedred:hover {
+        animation-name: spin;
+        animation-duration: 3s; /* 3 seconds */
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 
 #advancedgreen {
     width: 100px;
@@ -272,12 +288,12 @@ width: 100px;
     background-image: radial-gradient(45px 45px 45deg, circle cover, green 0%, lightblue 100%, red 95%);
 }
 
-#advancedgreen:hover {
-    animation-name: spin;
-    animation-duration: 3s; /* 3 seconds */
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
+    #advancedgreen:hover {
+        animation-name: spin;
+        animation-duration: 3s; /* 3 seconds */
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 
 /* set a max-width for horizontal fluid layout and make it centered */
 .container-fluid {
@@ -417,6 +433,9 @@ width: 100px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     font-size: 14px !important;
+    -moz-box-shadow: 5px 5px 0px #999;
+    -webkit-box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
 }
 
 .row {
@@ -504,7 +523,7 @@ li {
 
 .btn-primary-orange-help {
     background-color: #0e46a7;
-    border-color: #ffffff;
+    border-color: darkblue;
     color: #000;
     font-size: 15px !important;
     margin-bottom: 10px;
@@ -513,7 +532,7 @@ li {
 
     .btn-primary-orange-help:hover {
         background-color: deepskyblue;
-        border-color: #ffffff;
+        border-color: darkblue;
         color: #000;
         font-size: 15px !important;
         margin-bottom: 10px;
@@ -522,7 +541,7 @@ li {
 
 .btn-primary-orange-home {
     background-color: #FFBD00;
-    border-color: #ffffff;
+    border-color: darkblue;
     color: #000;
     font-size: 15px !important;
     margin-bottom: 10px;
@@ -531,7 +550,7 @@ li {
 
     .btn-primary-orange-home:hover {
         background-color: lightgray;
-        border-color: #ffffff;
+        border-color: darkblue;
         color: #000;
         font-size: 15px !important;
         margin-bottom: 10px;
@@ -742,6 +761,9 @@ input[type="select"] {
     -moz-border-radius: 10px;
     border-radius: 10px;
     padding: 15px 0 15px 0;
+    -moz-box-shadow: 5px 5px 0px #999;
+    -webkit-box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
 }
 
 .intro-dialog .modal-dialog {

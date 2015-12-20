@@ -17,6 +17,18 @@ app.config(function ($routeProvider) {
             controller: 'mainController'
         })
 
+         // route for the sponsorship page
+        .when('/Sponsor', {
+            templateUrl: 'Sponsor.html',
+            controller: 'sponsorController'
+        })
+
+         // route for the agent page
+        .when('/Agent', {
+            templateUrl: 'Agent.html',
+            controller: 'agentController'
+        })
+
         // route for the home page
         .when('/Temp1', {
             templateUrl: 'UnderConstruction1.html',

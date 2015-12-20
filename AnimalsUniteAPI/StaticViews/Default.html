@@ -3,7 +3,7 @@
 
 
 
-<div class="container body-content ng-cloak"  ng-cloak>
+<div class="container body-content ng-cloak" ng-cloak>
 
     <notifications-bar class="notifications"></notifications-bar>
 
@@ -71,15 +71,11 @@
             </div>
         </div>
     </div>-->
-
     <!--<div class="subheading">
         <a href="http://www.dandydogs.co.za/mobiledoggroomingwestrand.htm" target="_blank">
             <img src="../Images/AdExample.png" class="img-responsive" style="border: 5px solid white;" />
         </a>
     </div>-->
-
-  
-
     <!--<div class="alert alert-success" ng-show="show">
         <strong>Success!</strong> You are sucessfully logged in as {{username}}
     </div>-->
@@ -127,11 +123,11 @@
                             </h3>
                         </a>
                         <br />
-                        <h3 style="font-size: 14px;" data-animation="animated bounceInLeft">
-                            <a href="#Register">
+                        <div class="carouseltext" data-animation="animated bounceInLeft">
+                            <a href="#Register" style="text-shadow: none; font-weight: normal;">
                                 Register TODAY and by beginning of next week you will be amazed how much we can assist you and how much fun this web site can be.
                             </a>
-                        </h3>
+                        </div>
                     </div>
 
                     <a class="btn btn-primary-orange-home" ng-click="showintro()"><span class="glyphicon glyphicon-resize-full" style="color: green;"></span>&nbsp;&nbsp;Show intro &raquo;</a>
@@ -140,18 +136,22 @@
             <!-- Second slide -->
             <div class="item">
                 <div class="carousel-caption">
-                    <div class="carouseltext" style="background-color: darkmagenta;" data-animation="animated zoomInLeft">
-                        <a href="#Temp1" style="text-shadow: none; font-weight: normal;">
+                    <a href="#Sponsor" style="text-shadow: none; font-weight: normal;">
+                        <div class="carouseltext" style="background-color: darkmagenta;" data-animation="animated zoomInLeft">
+                            <img src="../Images/Sponsor.png" class="img-circle" width="50" />
+                            <br />
                             If you interested in becoming a sponsor click here.
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                     <br />
 
-                    <div class="carouseltext" style="background-color: crimson;" data-animation="animated bounceInLeft">
-                        <a href="#Temp1" style="text-shadow: none; font-weight: normal;">
+                    <a href="#Agent" style="text-shadow: none; font-weight: normal;">
+                        <div class="carouseltext" style="background-color: crimson;" data-animation="animated bounceInLeft">
+                            <img src="../Images/agent.jpg" class="img-circle" width="50" />
+                            <br />
                             If you interested in becoming an agent click here.
-                        </a>
-                    </div>
+                        </div>
+                    </a>
 
                     <a class="btn btn-primary-orange-home" ng-click="showintro()"><span class="glyphicon glyphicon-resize-full" style="color: green;"></span>&nbsp;&nbsp;Show intro &raquo;</a>
                 </div>
@@ -166,7 +166,7 @@
 
                     </div>
                     <a href="#MyMap">
-                        <img class="img-circle" src="../Images/googlemap.png" style="display:inline;" />
+                        <img class="img-circle" src="../Images/googlemap.png" height="180" style="display:inline; border: 1px solid darkgray;" />
                     </a>
                     <br />
                 </div>
@@ -224,14 +224,14 @@
             <div class="col-sm-3">
                 <div class="btn-group">
                     <button type="button" ng-click="help2()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="gotoPage('/Temp2')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-bullhorn" style="color: red !important;"></span>&nbsp;Lost my pet &raquo;</button>
+                    <button type="button" ng-click="gotoPage('/Lost')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-bullhorn" style="color: red !important;"></span>&nbsp;Lost my pet &raquo;</button>
                 </div>
             </div>
 
             <div class="col-sm-3">
                 <div class="btn-group">
                     <button type="button" ng-click="help3()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="gotoPage('/Temp3')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-search" style="color: #0e46a7 !important;"></span>&nbsp;Found a lost pet &raquo;</button>
+                    <button type="button" ng-click="gotoPage('/Found')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-search" style="color: #0e46a7 !important;"></span>&nbsp;Found a lost pet &raquo;</button>
                 </div>
             </div>
 

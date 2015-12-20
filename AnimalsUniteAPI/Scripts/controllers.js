@@ -376,9 +376,9 @@ app.controller('contactUsController', function ($scope, $http, $location) {
                 $.each(types, function (index, type) {
                     BootstrapDialog.show({
                         type: type,
-                        title: 'Your request has been sent',
+                        title: 'We received your query',
                         cssClass: 'login-dialog',
-                        message: "We will be in contact with you within 24 hours",
+                        message: "One of the team members will contact you with 24 hours.",
                         buttons: [{
                             label: 'Ok',
                             cssClass: 'btn btn-primary-orange-home',

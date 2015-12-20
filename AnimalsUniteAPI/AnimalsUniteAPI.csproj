@@ -534,6 +534,7 @@
     <Content Include="Images\a07.png" />
     <Content Include="Images\AboutUs.jpg" />
     <Content Include="Images\AdExample.png" />
+    <Content Include="Images\agent.jpg" />
     <Content Include="Images\birdHead2.jpg" />
     <Content Include="Images\bloggr.png" />
     <Content Include="Images\brick-wall-dark.png" />
@@ -589,6 +590,7 @@
     <Content Include="Images\SouthAfrica.png" />
     <Content Include="Images\spca.jpg" />
     <Content Include="Images\SPCALogo.png" />
+    <Content Include="Images\Sponsor.png" />
     <Content Include="Images\stumbleupon.png" />
     <Content Include="Images\tumblr.png" />
     <Content Include="Images\twitter.png" />
@@ -683,9 +685,12 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.14.3.min.js" />
+    <Content Include="SiteMap.html" />
     <Content Include="StaticPages\Recognise.html" />
+    <Content Include="StaticViews\Agent.html" />
     <Content Include="StaticViews\Diary.html" />
     <Content Include="StaticViews\PetSitting.html" />
+    <Content Include="StaticViews\Sponsor.html" />
     <Content Include="StaticViews\TheTeam.html" />
     <Content Include="StaticViews\About.html" />
     <Content Include="StaticViews\ContactUs.html" />
