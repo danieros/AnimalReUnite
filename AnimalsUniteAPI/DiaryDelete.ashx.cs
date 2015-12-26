@@ -15,14 +15,14 @@ namespace AnimalsUniteAPI
         {
             string diaryid = "";
 
-            if (context.Request.HttpMethod == "POST")
+            if (context.Request.HttpMethod == "GET")
             {
-                foreach (string key in context.Request.Form.AllKeys)
+                foreach (string key in context.Request.QueryString.AllKeys)
                 {
                     switch (key)
                     {
                         case "diaryid":
-                            diaryid = context.Request.Form[key];
+                            diaryid = context.Request.QueryString[key];
                             break;                       
                         default:
                             // You can use the default case.

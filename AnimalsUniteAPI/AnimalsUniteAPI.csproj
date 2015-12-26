@@ -77,6 +77,14 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SendGrid.SmtpApi, Version=1.3.1.0, Culture=neutral, PublicKeyToken=2ae73662c35d80e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail, Version=6.1.0.0, Culture=neutral, PublicKeyToken=2ae73662c35d80e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SendGridMail.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -249,12 +257,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="AzureCommon.cs" />
+    <Compile Include="ComUs.ashx.cs">
+      <DependentUpon>ComUs.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ContactUs.ashx.cs">
       <DependentUpon>ContactUs.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DiaryGetController.cs" />
     <Compile Include="Controllers\DogBreedController.cs" />
+    <Compile Include="Controllers\DoortjieMessageController.cs" />
     <Compile Include="Controllers\HeroesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PetDetailsController.cs" />
@@ -528,6 +540,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="default.aspx" />
+    <Content Include="DR.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -535,11 +548,13 @@
     <Content Include="Images\AboutUs.jpg" />
     <Content Include="Images\AdExample.png" />
     <Content Include="Images\agent.jpg" />
+    <Content Include="Images\barbie.jpg" />
     <Content Include="Images\birdHead2.jpg" />
     <Content Include="Images\bloggr.png" />
     <Content Include="Images\brick-wall-dark.png" />
     <Content Include="Images\budjieHead.jpg" />
     <Content Include="Images\bulddogHead.jpg" />
+    <Content Include="Images\Camera.jpg" />
     <Content Include="Images\catHead1.jpg" />
     <Content Include="Images\catHead2.jpg" />
     <Content Include="Images\ContactUs.jpg" />
@@ -597,6 +612,7 @@
     <Content Include="Images\vimeo.png" />
     <Content Include="Images\waiting.gif" />
     <Content Include="Images\WallofHeroes.jpg" />
+    <Content Include="Images\White-Paper-Texture-Background-520x390.jpg" />
     <Content Include="Images\youtube.png" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-messages.js" />
@@ -649,6 +665,7 @@
     <Content Include="ContactUs.ashx" />
     <Content Include="DiaryInsert.ashx" />
     <Content Include="DiaryDelete.ashx" />
+    <Content Include="ComUs.ashx" />
     <None Include="Properties\PublishProfiles\PetsUnited.pubxml" />
     <Content Include="Scripts\controllers.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -688,7 +705,9 @@
     <Content Include="SiteMap.html" />
     <Content Include="StaticPages\Recognise.html" />
     <Content Include="StaticViews\Agent.html" />
+    <Content Include="StaticViews\Comm.html" />
     <Content Include="StaticViews\Diary.html" />
+    <Content Include="StaticViews\DR.html" />
     <Content Include="StaticViews\PetSitting.html" />
     <Content Include="StaticViews\Sponsor.html" />
     <Content Include="StaticViews\TheTeam.html" />

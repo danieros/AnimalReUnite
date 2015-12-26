@@ -1,0 +1,46 @@
+﻿<div class="loading-dialog" data-loading>
+</div>
+
+<form ng-submit="processFormComUs()" name="myForm" role="form" novalidate>
+    <div class="container body-content">
+
+        <div class="mypage-headersmall">
+            <img src="../Images/ContactUs.jpg" class="img-circle" height="40" />
+            DR
+        </div>
+        <br />
+
+        <div ng-repeat="x in names" style="margin-bottom: 20px; color: black; font-size: 9px;">
+            {{x.MessageText}}
+        </div>
+
+        <div class="form-horizontal">
+            <div class="jumbotron" style="background-color: deeppink !important;">
+
+                <div>
+                    {{mymessages}}
+                </div>
+
+                <div class="form-group">
+                    <label for="Message" class="col-md-4 control-label">Type your message</label>
+                    <div class="col-md-8">
+                        <textarea placeholder="If we can asssist we will!" cols="10" rows="7" class="form-control" name="mymessage" ng-model="formData.mymessage" required></textarea>
+                    </div>
+
+
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                        <button type="submit" ng-click="submitted=true" style="width:140px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider">Submit request</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        </div>
+</form>

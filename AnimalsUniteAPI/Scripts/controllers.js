@@ -1,4 +1,108 @@
-﻿
+﻿app.controller('drController', function ($scope, $http, $location) {
+
+    $http.get("/api/DoortjieMessage/GetDoortjieMessage")
+         .success(function (response) {
+             $scope.names = response;
+             //$scope.DateInserted = response.DateInserted;
+         });
+
+    $scope.formData = {};
+
+
+    //$scope.processForm = function () {
+    //    alert("myForm.$invalid = " + $scope.myForm.$invalid);
+    //}
+
+    //// process the form
+    $scope.processFormComUs = function () {
+        if ($scope.myForm.$invalid == false) {
+            $http({
+                method: 'POST',
+                url: '../ComUs.ashx',
+                data: $.param($scope.formData),  // pass in data as strings
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+            .success(function (data) {
+                console.log(data);
+
+                var types = [BootstrapDialog.TYPE_SUCCESS];
+
+                $.each(types, function (index, type) {
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Thanks Barbie gekry',
+                        cssClass: 'login-dialog',
+                        message: "Sal so vinning kan antwoord.",
+                        buttons: [{
+                            label: 'Ok',
+                            cssClass: 'btn btn-primary-orange-home',
+                            action: function (dialogItself) {
+                                dialogItself.close();
+                            }
+
+                        }]
+                    });
+                });
+
+                $location.path('/');
+
+            });
+        }
+    };
+
+});
+
+app.controller('comController', function ($scope, $http, $location) {
+
+    $scope.mymessages = " (Kersdag 18:52) Ok sal net een ker dag stuur maar ek mis jou verskriklik. More is ek weer in gym dan is ek weer ok.";
+
+    $scope.formData = {};
+
+
+    //$scope.processForm = function () {
+    //    alert("myForm.$invalid = " + $scope.myForm.$invalid);
+    //}
+
+    //// process the form
+    $scope.processFormComUs = function () {
+        if ($scope.myForm.$invalid == false) {
+            $http({
+                method: 'POST',
+                url: '../ComUs.ashx',
+                data: $.param($scope.formData),  // pass in data as strings
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+            .success(function (data) {
+                console.log(data);
+
+                var types = [BootstrapDialog.TYPE_SUCCESS];
+
+                $.each(types, function (index, type) {
+                    BootstrapDialog.show({
+                        type: type,
+                        title: 'Thanks Barbie gekry',
+                        cssClass: 'login-dialog',
+                        message: "Sal so vinning kan antwoord.",
+                        buttons: [{
+                            label: 'Ok',
+                            cssClass: 'btn btn-primary-orange-home',
+                            action: function (dialogItself) {
+                                dialogItself.close();
+                            }
+
+                        }]
+                    });
+                });
+
+                $location.path('/');
+
+            });
+        }
+    };
+
+});
+
+
 app.controller('diaryController', function ($scope, userService, $http, $location, $route, $timeout) {
 
     $scope.goBack = function (hash) {
@@ -30,7 +134,7 @@ app.controller('diaryController', function ($scope, userService, $http, $locatio
     };
 
     $scope.formats = ['dd MMMM yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
+    $scope.format = $scope.formats[1];
 
     $scope.status = {
         opened: false
@@ -53,10 +157,10 @@ app.controller('diaryController', function ($scope, userService, $http, $locatio
         $scope.formData.memberid = memberid;
         $scope.formData.petname = petname;
         console.log("$scope.formData.mydate = " + $scope.formData.mydate);
-        
+
         console.log(moment($scope.formData.mydate).format("D MMM YYYY"));
         $scope.formData.mydate = moment($scope.formData.mydate).format("D MMM YYYY");
-       
+
         $http({
             method: 'POST',
             url: '../DiaryInsert.ashx',
@@ -106,6 +210,46 @@ app.controller('diaryController', function ($scope, userService, $http, $locatio
                     cssClass: 'btn-primary',
                     action: function (dialogItself) {
                         console.log("you are about to delete " + y);
+
+
+
+                        $http({
+                            method: 'GET',
+                            url: '../DiaryDelete.ashx?diaryid=' + y,
+                            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                        })
+       .success(function (data) {
+           console.log(data);
+
+           $timeout(function () {
+               // 0 ms delay to reload the page.
+               $route.reload();
+           }, 0);
+
+           var types = [BootstrapDialog.TYPE_SUCCESS];
+
+           $.each(types, function (index, type) {
+               BootstrapDialog.show({
+                   type: type,
+                   title: 'Diary updated',
+                   cssClass: 'login-dialog',
+                   message: "You have successfully deleted the selected entry",
+                   buttons: [{
+                       label: 'Ok',
+                       cssClass: 'btn btn-primary-orange-home',
+                       action: function (dialogItself) {
+                           dialogItself.close();
+                       }
+
+                   }]
+               });
+           });
+       });
+
+
+
+
+
                         dialogItself.close();
                     }
                 }, {
@@ -120,7 +264,7 @@ app.controller('diaryController', function ($scope, userService, $http, $locatio
         });
         console.log("DiaryEntry = " + y);
     }
-    
+
 });
 
 app.controller('faqController', function ($scope, $location, userService) {
@@ -460,8 +604,7 @@ app.controller('mainController', function ($scope, notifications, $route, $locat
     $scope.userloggedin = checkifuserloggedin(); //external js file
 
     //#region Begin Set up sponsor heading and context
-    if ($scope.userloggedin == false)
-    {
+    if ($scope.userloggedin == false) {
         console.log("not logged in");
         $scope.SponsorHeading = "Please register or log in. If you registering by using a sponsor please use the sponsorhip code provided."
     }

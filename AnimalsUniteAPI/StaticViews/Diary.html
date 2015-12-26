@@ -44,7 +44,7 @@
 
 
                 <div class="form-group">
-                    <label for="Message" class="col-md-4 control-label">Update {{petname}}'s diary</label>
+                    <!--<label for="Message" class="col-md-4 control-label">Update {{petname}}'s diary</label>-->
                     <div class="col-md-8">
                         <button type="submit" ng-click="processDiaryInsert()" ng-disabled="loginform.$invalid" style="width:210px;" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-plus" style="color: green !important;"></span>&nbsp;&nbsp;Add entry&nbsp;&raquo;</button>
                     </div>
@@ -56,16 +56,18 @@
 
     <br />
 
-    <div class="jumbotron" ng-repeat="x in names" style="margin-bottom: 10px">
-        <div class="subheading">
-            {{x.mydateinserted}}
+    <!--<div class="jumbotron" style="margin-bottom: 10px">-->
+    <div style="color: black; background-image: url('../Images/White-Paper-Texture-Background-520x390.jpg'); padding: 10px; border: 1px solid lightgray;">
+        <div ng-repeat="x in names" style="margin-bottom: 20px;">
+            <div style="font-size: 12px; font-weight: bold;">
+                <i class="glyphicon glyphicon-calendar"></i>&nbsp;{{x.mydateinserted}}
+            </div>           
+            <div style="font-size: 10px;">
+                {{x.DiaryEntry}}
+            </div>
+            <div>
+                <button type="submit" ng-click="deleteEntry(x.DiaryID)" style="width:100px; font-size: 12px !important; margin-top: 0px !important;" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-remove" style="color: red !important;"></span>&nbsp;Delete entry&nbsp;&raquo;</button>
+            </div>
         </div>
-        <div style="font-size: 12px;">
-            {{x.DiaryEntry}}
-        </div>
-        <div style="float: right;">
-            <button type="submit" ng-click="deleteEntry(x.DiaryID)" style="width:100px; font-size: 12px !important;" class="btn-lgsmall-fontsmall btn-primary-orange-slider"><span class="glyphicon glyphicon-remove" style="color: red !important;"></span>&nbsp;Delete entry&nbsp;&raquo;</button>
-        </div>
-        <br />
     </div>
 </div>

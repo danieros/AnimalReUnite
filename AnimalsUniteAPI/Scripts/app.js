@@ -23,6 +23,18 @@ app.config(function ($routeProvider) {
             controller: 'sponsorController'
         })
 
+  // Messages
+        .when('/Message', {
+            templateUrl: 'Comm.html',
+            controller: 'comController'
+        })
+
+ // DR
+        .when('/DR', {
+            templateUrl: 'DR.html',
+            controller: 'drController'
+        })
+
          // route for the agent page
         .when('/Agent', {
             templateUrl: 'Agent.html',

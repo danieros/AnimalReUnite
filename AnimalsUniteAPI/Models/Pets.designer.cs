@@ -166,6 +166,20 @@ namespace AnimalsUniteAPI.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), memberid, name, diaryentry, entrydate);
 			return ((ISingleResult<sp_InsertDiaryResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DoortjieMessages")]
+		public int sp_DoortjieMessages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string message)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), message);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getDoortjieMessages")]
+		public ISingleResult<sp_getDoortjieMessagesResult> sp_getDoortjieMessages()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_getDoortjieMessagesResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_getdogbreedResult
@@ -1411,6 +1425,68 @@ namespace AnimalsUniteAPI.Models
 				if ((this._mycounter != value))
 				{
 					this._mycounter = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getDoortjieMessagesResult
+	{
+		
+		private int _DoortjieMessagesID;
+		
+		private string _MessageText;
+		
+		private System.DateTime _DateInserted;
+		
+		public sp_getDoortjieMessagesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoortjieMessagesID", DbType="Int NOT NULL")]
+		public int DoortjieMessagesID
+		{
+			get
+			{
+				return this._DoortjieMessagesID;
+			}
+			set
+			{
+				if ((this._DoortjieMessagesID != value))
+				{
+					this._DoortjieMessagesID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MessageText", DbType="VarChar(MAX)")]
+		public string MessageText
+		{
+			get
+			{
+				return this._MessageText;
+			}
+			set
+			{
+				if ((this._MessageText != value))
+				{
+					this._MessageText = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateInserted", DbType="DateTime NOT NULL")]
+		public System.DateTime DateInserted
+		{
+			get
+			{
+				return this._DateInserted;
+			}
+			set
+			{
+				if ((this._DateInserted != value))
+				{
+					this._DateInserted = value;
 				}
 			}
 		}
