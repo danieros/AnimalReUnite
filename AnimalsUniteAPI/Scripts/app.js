@@ -163,6 +163,21 @@ app.config(function ($routeProvider) {
              controller: 'contactUsController'
          })
 
+         .when('/MessageArchive', {
+             templateUrl: 'MessageARchive.html',
+             controller: 'messageArchiveController'
+         })
+
+        .when('/ImageManipulate', {
+            templateUrl: 'ImageManipulate.html',
+            controller: 'imagemanipulateController'
+        })
+
+         .when('/QuickSteps', {
+             templateUrl: 'QuickSteps.html',
+             controller: 'contactUsController'
+         })
+
         // route for the contact page
         .when('/dogbreedselect', {
             templateUrl: 'DogBreedSelect.html',

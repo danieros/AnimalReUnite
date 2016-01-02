@@ -1,12 +1,13 @@
 ﻿.navbar-custom {
-  background-color: #0E46A7; /*blue*/
-  border-color: #0E46A7; /*blue*/
+
+    background-color: black; 
+  border-color: black; /*blue*/
 }
 .navbar-custom .navbar-brand {
   color: #ecf0f1; /*white*/
 }
 .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
-  color: #0E46A7; /*blue*/
+  color: black; /*blue*/
 }
 .navbar-custom .navbar-text {
   color: #ecf0f1; /*white*/
@@ -15,10 +16,10 @@
   color: #ecf0f1; /*white*/
 }
 .navbar-custom .navbar-nav > li > a:hover, .navbar-custom .navbar-nav > li > a:focus {
-  color: #0E46A7; /*blue*/
+  color: black; /*blue*/
 }
 .navbar-custom .navbar-nav > li > .dropdown-menu {
-  background-color: #0E46A7; /*blue*/
+  background-color: black; /*blue*/
 }
 .navbar-custom .navbar-nav > li > .dropdown-menu > li > a {
   color: #ecf0f1; /*white*/

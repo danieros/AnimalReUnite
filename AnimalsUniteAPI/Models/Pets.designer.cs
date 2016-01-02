@@ -180,6 +180,13 @@ namespace AnimalsUniteAPI.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_getDoortjieMessagesResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetUserMessages")]
+		public ISingleResult<sp_GetUserMessagesResult> sp_GetUserMessages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> memberid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), memberid);
+			return ((ISingleResult<sp_GetUserMessagesResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_getdogbreedResult
@@ -1455,6 +1462,68 @@ namespace AnimalsUniteAPI.Models
 				if ((this._DoortjieMessagesID != value))
 				{
 					this._DoortjieMessagesID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MessageText", DbType="VarChar(MAX)")]
+		public string MessageText
+		{
+			get
+			{
+				return this._MessageText;
+			}
+			set
+			{
+				if ((this._MessageText != value))
+				{
+					this._MessageText = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateInserted", DbType="DateTime NOT NULL")]
+		public System.DateTime DateInserted
+		{
+			get
+			{
+				return this._DateInserted;
+			}
+			set
+			{
+				if ((this._DateInserted != value))
+				{
+					this._DateInserted = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetUserMessagesResult
+	{
+		
+		private int _UserMessageID;
+		
+		private string _MessageText;
+		
+		private System.DateTime _DateInserted;
+		
+		public sp_GetUserMessagesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserMessageID", DbType="Int NOT NULL")]
+		public int UserMessageID
+		{
+			get
+			{
+				return this._UserMessageID;
+			}
+			set
+			{
+				if ((this._UserMessageID != value))
+				{
+					this._UserMessageID = value;
 				}
 			}
 		}

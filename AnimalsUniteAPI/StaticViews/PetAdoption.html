@@ -15,7 +15,7 @@
 
     <br />
 
-    <div class="jumbotron ng-cloak" ng-cloak>
+    <div class="jumbotron ng-cloak" ng-cloak  style="background-color: {{backgroundcolor}} !important;">
         You can use quick search and by click one of the NSPCA's you will get more information including telephone numbers and location. If we know your location you can click <a href="">here</a> and we will list the NSPCA's in order of distance from your location.
         <div style="background-color: white; color: black; padding: 15px 5px 5px 0; box-shadow: 10px 10px 5px #888888;    border: 2px solid;    border-radius: 25px;">
             <ul class="ulspca" ng-repeat="y in names | searchForSPCA:searchString">

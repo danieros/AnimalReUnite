@@ -7,7 +7,16 @@
 
     <notifications-bar class="notifications"></notifications-bar>
 
-    <div class="mypage-header">
+    <a href="" ng-click="messages()">
+        <div class="message-header" style="color: white !important; background-color: {{backgroundcolor}} !important;">
+            <span class="glyphicon glyphicon-envelope" style="color: white !important;"></span>&nbsp;New Messages
+        </div>
+    </a>
+
+    <br />
+
+
+    <div class="mypage-header" style="background-color: #FFBD00 !important;">
         <!--<div class="slider">-->
         <table width="100%">
             <tr>
@@ -25,7 +34,7 @@
                     </ul>
                 </td>
                 <td>
-                    Welcome {{username}}
+                    <span style="color: #FFFFFF;"> Welcome {{username}}</span>
                 </td>
                 <td style="width: 40px;">
                     <ul id="slider2" style="height: 40px; width: 40px;">
@@ -47,7 +56,7 @@
 
     <br />
 
-    <div class="subheading">{{SponsorHeading}}</div>
+    <div class="subheading" style="color: white !important;">{{SponsorHeading}}</div>
 
     <!--<div class="row row-centered">
         <div class="col-sm-3">
@@ -102,13 +111,13 @@
                 <div class="carousel-caption">
                     <div ng-if="userloggedin == true">
                         <a href="#Temp1">
-                            <h3 style="background-color: forestgreen" class="icon-container" data-animation="animated bounceInDown">
+                            <h3 style="background-color: forestgreen;" class="icon-container" data-animation="animated bounceInDown">
                                 <span class="glyphicon glyphicon-ok"></span>
                             </h3>
                         </a>
                         <br />
                         <!--<h3 style="font-size: 14px;" data-animation="animated bounceInLeft">-->
-                        <div class="carouseltext" data-animation="animated bounceInLeft">
+                        <div class="carouseltext" style="background-color: {{backgroundcolor}} !important;" data-animation="animated bounceInLeft">
                             <a href="#Temp1" style="text-shadow: none; font-weight: normal;">
                                 Thank you for registering.  Although you can immediately start using all modules the official launch is 1 January 2016.
                             </a>
@@ -118,12 +127,12 @@
 
                     <div ng-if="userloggedin == false">
                         <a href="#Register">
-                            <h3 class="icon-container" data-animation="animated bounceInDown">
+                            <h3 class="icon-container" data-animation="animated bounceInDown" style="background-color: {{backgroundcolor}} !important;">
                                 <span class="glyphicon glyphicon-user"></span>
                             </h3>
                         </a>
                         <br />
-                        <div class="carouseltext" data-animation="animated bounceInLeft">
+                        <div class="carouseltext" style="background-color: {{backgroundcolor}} !important;" data-animation="animated bounceInLeft">
                             <a href="#Register" style="text-shadow: none; font-weight: normal;">
                                 Register TODAY and by beginning of next week you will be amazed how much we can assist you and how much fun this web site can be.
                             </a>
@@ -137,19 +146,26 @@
             <div class="item">
                 <div class="carousel-caption">
                     <a href="#Sponsor" style="text-shadow: none; font-weight: normal;">
-                        <div class="carouseltext" style="background-color: darkmagenta;" data-animation="animated zoomInLeft">
+                        <div class="carouseltext" style="background-color: beige; color: black !important;" data-animation="animated zoomInLeft">
                             <img src="../Images/Sponsor.png" class="img-circle" width="50" />
                             <br />
-                            If you interested in becoming a sponsor click here.
+                            Interested in becoming a sponsor?
                         </div>
                     </a>
-                    <br />
 
                     <a href="#Agent" style="text-shadow: none; font-weight: normal;">
-                        <div class="carouseltext" style="background-color: crimson;" data-animation="animated bounceInLeft">
-                            <img src="../Images/agent.jpg" class="img-circle" width="50" />
+                        <div class="carouseltext" style="background-color: beige; color: black !important;" data-animation="animated bounceInLeft">
+                            <img src="../Images/agent.jpg" class="img-circle" width="30" />
                             <br />
-                            If you interested in becoming an agent click here.
+                            Interested in becoming an agent?
+                        </div>
+                    </a>
+
+                    <a href="#Agent" style="text-shadow: none; font-weight: normal;">
+                        <div class="carouseltext" style="background-color: beige; color: black !important;" data-animation="animated bounceInLeft">
+                            <img src="../Images/Worker.jpg" class="img-circle" width="30" />
+                            <br />
+                            Interested in becoming a foot soldier?
                         </div>
                     </a>
 
@@ -159,7 +175,7 @@
             <!-- Third slide -->
             <div class="item">
                 <div class="carousel-caption">
-                    <div class="carouseltext" data-animation="animated zoomInLeft">
+                    <div class="carouseltext" style="background-color: {{backgroundcolor}} !important;" data-animation="animated zoomInLeft">
                         <a href="#MyMap">
                             We make extensive use of Google maps to limit activity to your community.
                         </a>
@@ -211,7 +227,7 @@
         <div class="row row-centered">
             <div class="col-sm-3">
                 <div class="btn-group">
-                    <button type="button" ng-click="help1()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="help1()" style="width: 40px; background-color: {{backgroundcolor}} !important;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
                     <button type="button" ng-click="gotoPage('/PetsRegistered')" class="btn btn-primary-orange-home">
                         <span class="glyphicon glyphicon-info-sign" style="color: #0e46a7 !important;"></span>&nbsp;
                         My pet's info
@@ -223,29 +239,29 @@
 
             <div class="col-sm-3">
                 <div class="btn-group">
-                    <button type="button" ng-click="help2()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="help2()" style="width: 40px; background-color: {{backgroundcolor}} !important;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
                     <button type="button" ng-click="gotoPage('/Lost')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-bullhorn" style="color: red !important;"></span>&nbsp;Lost my pet &raquo;</button>
                 </div>
             </div>
 
             <div class="col-sm-3">
                 <div class="btn-group">
-                    <button type="button" ng-click="help3()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="help3()" style="width: 40px; background-color: {{backgroundcolor}} !important;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
                     <button type="button" ng-click="gotoPage('/Found')" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-search" style="color: #0e46a7 !important;"></span>&nbsp;Found a lost pet &raquo;</button>
                 </div>
             </div>
 
             <div class="col-sm-3">
                 <div class="btn-group">
-                    <button type="button" ng-click="help4()" style="width: 40px;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
-                    <button type="button" ng-click="messages()" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-envelope" style="color: #0e46a7 !important;"></span>&nbsp;Messages &raquo;</button>
+                    <button type="button" ng-click="help4()" style="width: 40px; background-color: {{backgroundcolor}} !important;" class="btn btn-primary-orange-help"><span style="font-size: 15px; color: white;" class="glyphicon glyphicon-question-sign"></span></button>
+                    <button type="button" ng-click="messages()" class="btn btn-primary-orange-home"><span class="glyphicon glyphicon-envelope" style="color: #0e46a7 !important;"></span>&nbsp;Message archive &raquo;</button>
                 </div>
             </div>
 
         </div>
     </div>
     <br />
-    <div class="homepagephotocontainer">
+    <div class="homepagephotocontainer" style="background-color: {{backgroundcolor}} !important;">
         <div class="row row-centered">
             <div class="col-sm-6 col-md-2 col-xs-4">
 

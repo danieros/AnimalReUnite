@@ -274,6 +274,7 @@
     <Compile Include="Controllers\SPCAController.cs" />
     <Compile Include="Controllers\SPCAsingleController.cs" />
     <Compile Include="Controllers\UniqueFeaturesController.cs" />
+    <Compile Include="Controllers\UserMessagesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -467,6 +468,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Bubblethought.css" />
     <Content Include="Content\Buttons.css" />
+    <Content Include="Content\canvasCrop.css" />
     <Content Include="Content\CustomNav.css" />
     <Content Include="Content\demos.bootstrap.styles.css" />
     <Content Include="Content\demos.jqueryui.styles.css" />
@@ -476,6 +478,7 @@
     <Content Include="Content\mycarousel.css" />
     <Content Include="Content\ngNotificationsBar.min.css" />
     <Content Include="Content\normalize.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -544,11 +547,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.png" />
     <Content Include="Images\a07.png" />
     <Content Include="Images\AboutUs.jpg" />
     <Content Include="Images\AdExample.png" />
     <Content Include="Images\agent.jpg" />
     <Content Include="Images\barbie.jpg" />
+    <Content Include="Images\barbie2.jpg" />
+    <Content Include="Images\barbie3.jpg" />
     <Content Include="Images\birdHead2.jpg" />
     <Content Include="Images\bloggr.png" />
     <Content Include="Images\brick-wall-dark.png" />
@@ -558,6 +566,7 @@
     <Content Include="Images\catHead1.jpg" />
     <Content Include="Images\catHead2.jpg" />
     <Content Include="Images\ContactUs.jpg" />
+    <Content Include="Images\design.png" />
     <Content Include="Images\deviantart.png" />
     <Content Include="Images\diary.png" />
     <Content Include="Images\digg.png" />
@@ -613,6 +622,7 @@
     <Content Include="Images\waiting.gif" />
     <Content Include="Images\WallofHeroes.jpg" />
     <Content Include="Images\White-Paper-Texture-Background-520x390.jpg" />
+    <Content Include="Images\Worker.jpg" />
     <Content Include="Images\youtube.png" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-messages.js" />
@@ -708,7 +718,10 @@
     <Content Include="StaticViews\Comm.html" />
     <Content Include="StaticViews\Diary.html" />
     <Content Include="StaticViews\DR.html" />
+    <Content Include="StaticViews\ImageManipulate.html" />
+    <Content Include="StaticViews\MessageArchive.html" />
     <Content Include="StaticViews\PetSitting.html" />
+    <Content Include="StaticViews\QuickSteps.html" />
     <Content Include="StaticViews\Sponsor.html" />
     <Content Include="StaticViews\TheTeam.html" />
     <Content Include="StaticViews\About.html" />

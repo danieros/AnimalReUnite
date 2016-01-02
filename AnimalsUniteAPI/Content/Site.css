@@ -74,9 +74,25 @@ body {
     box-shadow: 5px 5px 0px #999;
 }
 
+.message-header {
+    border: 1px solid #fff;
+    background-color: red;
+    color: black;
+    font-weight: bold !important;
+    text-align: center;
+    font-size: 20px;
+    border: solid 1px #CCC;
+    -moz-box-shadow: 5px 5px 0px #999;
+    -webkit-box-shadow: 5px 5px 0px #999;
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 6px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
 .mypage-header {
     border: 1px solid #fff;
-    background-color: #ffbd00;
+  //  background-color: #ffbd00;
     color: black;
     font-weight: bold !important;
     text-align: center;

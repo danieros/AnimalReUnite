@@ -54,7 +54,7 @@
 
 app.controller('comController', function ($scope, $http, $location) {
 
-    $scope.mymessages = " (Kersdag 18:52) Ok sal net een ker dag stuur maar ek mis jou verskriklik. More is ek weer in gym dan is ek weer ok.";
+    $scope.mymessages = "(Saterdag) Jou gemis vandag :( Ek kan nie wag om jou te sien nie nie. Ek het jou gese ek jy sal saam besluit oor Londen. J is myne tensy jy ander besluit het .";
 
     $scope.formData = {};
 
@@ -268,7 +268,7 @@ app.controller('diaryController', function ($scope, userService, $http, $locatio
 });
 
 app.controller('faqController', function ($scope, $location, userService) {
-
+    $scope.backgroundcolor = "purple";
 });
 
 
@@ -344,6 +344,9 @@ app.controller('uploadimageController', function ($scope, $location, userService
 app.controller('LoginController', function ($scope, $http, $location, $route, $window, userService) {
     // create a blank object to hold our form information
     // $scope will allow this to pass between controller and view
+
+    $scope.backgroundcolor = "purple";
+
     $scope.formData = {};
 
 
@@ -422,6 +425,9 @@ app.controller('LoginController', function ($scope, $http, $location, $route, $w
 });
 
 app.controller('formController', function ($scope, $http, $location) {
+
+    $scope.backgroundcolor = "purple";
+
     // create a blank object to hold our form information
     // $scope will allow this to pass between controller and view
     $scope.formData = {};
@@ -495,6 +501,8 @@ app.controller('formController', function ($scope, $http, $location) {
 });
 
 app.controller('contactUsController', function ($scope, $http, $location) {
+
+    $scope.backgroundcolor = "purple";
 
     $scope.formData = {};
 
@@ -593,7 +601,10 @@ function resetall() {
     $('#p6').hide();
 }
 
-app.controller('mainController', function ($scope, notifications, $route, $location, userService, $window) {
+app.controller('mainController', function ($scope, notifications, $route, $location, userService, $window, $http) {
+
+
+    $scope.backgroundcolor = "purple";
 
     console.log("userService.getlogin = " + userService.getlogin);
     if (userService.getlogin() == true) {
@@ -607,6 +618,10 @@ app.controller('mainController', function ($scope, notifications, $route, $locat
     if ($scope.userloggedin == false) {
         console.log("not logged in");
         $scope.SponsorHeading = "Please register or log in. If you registering by using a sponsor please use the sponsorhip code provided."
+    }
+    else
+    {
+        $scope.SponsorHeading = "Thanks, you are now part of our pet society.  We are here to help each other because we love animals!"
     }
     //#regionend
 
@@ -629,7 +644,7 @@ app.controller('mainController', function ($scope, notifications, $route, $locat
     // Convert back to days and return
     $scope.days = Math.round(difference_ms / one_day);
 
-    var message1 = "<i>\"To my pet"
+    var message1 = "<i>\"Choose your favourite color"
     message1 += "<br />I will never move and not take you with me"
     message1 += "<br />I will never put you in a shelter and leave"
     message1 += "<br />I will never let you starve"
@@ -639,24 +654,34 @@ app.controller('mainController', function ($scope, notifications, $route, $locat
     message1 += "<br />Because I love you and you are family\"</i>"
     message1 += "<br /><br />by unkown author and describes our mission. So how do we go about this?";
 
-    var message2 = "To help you find your baby when he/she gets lost you do the following:";
-    message2 += "<ul class=\"ulspecial\">";
-    message2 += "<li>Register using a valid email address.";
-    message2 += "<li>Upload information of all your pets located at one address.";
-    message2 += "<li>Upload photos of your pets as well as any distinct markings.";
-    message2 += "<li>When your baby (pet) manage to get lost we will generate Lost Posters for you and activate the community as well as email every vet and animal shelter in your community to help look.";
-    message2 += "</ul>";
+    var message2 = "<i>\"To my pet"
+    message2 += "<br />I will never move and not take you with me"
+    message2 += "<br />I will never put you in a shelter and leave"
+    message2 += "<br />I will never let you starve"
+    message2 += "<br />I will never let you hurt"
+    message2 += "<br />I will never desert you when you get old"
+    message2 += "<br />If that time comes, I will be there to hold you"
+    message2 += "<br />Because I love you and you are family\"</i>"
+    message2 += "<br /><br />by unkown author and describes our mission. So how do we go about this?";
 
-    var message3 = "In South Africa we are very much a community based society.";
-    message3 += "PetSociety want to access your location as we use Google maps to locate you and draw a 5 km radius around you.";
-    message3 += "We then limit search to this area to focus efforts. Experience has shown this is where you will find your pet if they get lost.";
-    message3 += "<div style=\"text-align: center;\"><img src=\"../Images/googlemapDialog.png\" height=\"120\"/></div>";
+    var message3 = "To help you find your baby when he/she gets lost you do the following:";
+    message3 += "<ul class=\"ulspecial\">";
+    message3 += "<li>Register using a valid email address.";
+    message3 += "<li>Upload information of all your pets located at one address.";
+    message3 += "<li>Upload photos of your pets as well as any distinct markings.";
+    message3 += "<li>When your baby (pet) manage to get lost we will generate Lost Posters for you and activate the community as well as email every vet and animal shelter in your community to help look.";
+    message3 += "</ul>";
 
-    var message4 = "So the question what will this cost you?";
-    message4 += "The quick answer is nothing.";
-    message4 += "However we would really appreciate a donation of R50 of which R10 is donated to your charity of choice";
-    message4 += "We really feel we can make a difference but we have costs of course to maintain the code and to host it";
-    message4 += "To make a donation see our pricing page";
+    var message4 = "In South Africa we are very much a community based society.";
+    message4 += "PetSociety want to access your location as we use Google maps to locate you and draw a 5 km radius around you.";
+    message4 += "We then limit search to this area to focus efforts. Experience has shown this is where you will find your pet if they get lost.";
+    message4 += "<div style=\"text-align: center;\"><img src=\"../Images/googlemapDialog.png\" height=\"120\"/></div>";
+
+    var message5 = "So the question what will this cost you?";
+    message5 += "The quick answer is nothing.";
+    message5 += "However we would really appreciate a donation of R50 of which R10 is donated to your charity of choice";
+    message5 += "We really feel we can make a difference but we have costs of course to maintain the code and to host it";
+    message5 += "To make a donation see our pricing page";
 
     $scope.showintro = function () {
         var howManyDialogs = 5;
@@ -781,18 +806,6 @@ message1];
     };
 
 
-    $scope.messages = function () {
-        notifications.closeAll();
-        notifications.showSuccess("Lorem ipsum dolor sit amet, te ipsum petentium instructior quo. Eu probo homero eam. Nec mollis epicuri placerat no, sed latine volutpat conceptam in. Populo legendos elaboraret eum te, inani nihil vidisse at cum. Mutat falli mea in, volutpat vituperatoribus mea eu. No cum error nemore tractatos.");
-    };
-
-
-
-
-
-
-
-
 
     //$scope.showwiz = true;
 
@@ -905,6 +918,19 @@ message1];
             $scope.show = false; // only show logged in once
         }
     }
+
+    $scope.messages = function () {
+        notifications.closeAll();
+        $http.get("/api/UserMessages/GetUserMessages?memberid=1")
+  .success(function (response) {
+      $scope.names = response;
+      notifications.showSuccess(response[0].MessageText);
+  });
+    };
+
+
+   // $scope.messages();
+
 });
 
 app.controller('mymapController', function ($scope) {
@@ -957,6 +983,7 @@ app.controller('mymapController', function ($scope) {
 
 app.controller('aboutController', function ($scope) {
 
+    $scope.backgroundcolor = "purple";
 });
 
 app.controller('validateCtrl', function ($scope) {
@@ -1088,6 +1115,9 @@ app.controller('InstantSearchController', function ($scope, $http, $sce) {
 
 app.controller('registerpetController', function ($scope, $sce, $location, $http) {
 
+    $scope.backgroundcolor = "purple";
+
+
     $scope.tasklist = []; //Array to hold all the tasks 
 
     if (getCookie("yourname") == 'undefined' || getCookie("yourname") == null || getCookie("yourname") == "") {
@@ -1153,6 +1183,8 @@ app.controller('registerpetController', function ($scope, $sce, $location, $http
 
 app.controller('petsregisteredController', function ($scope, $location, $http, $sce, $anchorScroll, $timeout) {
 
+    $scope.backgroundcolor = "purple";
+
     $scope.gotoPage = function (hash) {
         $location.path(hash);
     }
@@ -1214,7 +1246,7 @@ app.controller('petsregisteredController', function ($scope, $location, $http, $
 
     $scope.LoadPhotos = function (x) {
         setCookie("petname", x);
-        $location.path('\Uploadimages');
+        $location.path('\ImageManipulate');
     }
 
     $scope.deleteAnimal = function (x) {
